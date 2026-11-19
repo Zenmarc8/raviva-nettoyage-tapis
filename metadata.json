@@ -1,0 +1,8 @@
+{
+  "name": "Raviva Nettoyage de Tapis Montréal",
+  "description": "Service spécialisé de nettoyage écologique de tapis, carpettes, meubles rembourrés et matelas à Montréal, Laval et environs. Dirigé par Marc Lemonnier, 35 ans d'expérience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
