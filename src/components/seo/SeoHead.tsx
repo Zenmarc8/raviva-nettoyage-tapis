@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { SITE_CONFIG } from '../../config/site.config';
 import { ACTIVE_SERVICES, ServiceDefinition } from '../../config/services.config';
 import { ALL_CITIES } from '../../config/locations.config';
+import { GuideArticle } from '../../config/guides.config';
 import { useTranslation } from '../../context/LanguageContext';
 
 interface SeoHeadProps {
   pageTitle?: string;
   pageDescription?: string;
   service?: ServiceDefinition;
+  article?: GuideArticle;
   breadcrumbs?: Array<{ name: string; url: string }>;
   includeFaqSchema?: boolean;
 }
@@ -16,6 +18,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   pageTitle,
   pageDescription,
   service,
+  article,
   breadcrumbs,
   includeFaqSchema = false,
 }) => {
@@ -91,6 +94,29 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
       }
     : null;
 
+  const articleSchema = article
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title[locale],
+        description: article.excerpt[locale],
+        datePublished: article.publishedAt,
+        author: {
+          '@type': 'Person',
+          name: SITE_CONFIG.founderName,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_CONFIG.companyName,
+          url: SITE_CONFIG.domain,
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${SITE_CONFIG.domain}/guides/${article.slug}`,
+        },
+      }
+    : null;
+
   const faqSchema = includeFaqSchema
     ? {
         '@context': 'https://schema.org',
@@ -130,6 +156,12 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      )}
+      {articleSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
         />
       )}
       {faqSchema && (

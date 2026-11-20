@@ -88,18 +88,14 @@ export const Header: React.FC = () => {
             }}
             className="flex shrink-0 items-center gap-2.5 whitespace-nowrap font-display text-lg font-extrabold tracking-tight text-[#0b3d2e]"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
+            <img
+              src="/images/logo-raviva-nettoyage-tapis-montreal.png"
+              alt=""
               aria-hidden="true"
-              className="shrink-0 text-[#0b3d2e]"
-            >
-              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
-              <path d="M2 10H22" stroke="currentColor" strokeWidth="1.5" />
-              <path d="M7 15H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
+              width={40}
+              height={45}
+              className="h-10 w-auto shrink-0 object-contain"
+            />
             <span>{SITE_CONFIG.shortName}</span>
           </a>
 
@@ -186,7 +182,7 @@ export const Header: React.FC = () => {
                       </a>
                     ))}
                   </div>
-                  <div className="mt-4 border-t border-slate-200 pt-3">
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3">
                     <a
                       href="/#services"
                       onClick={(e) => {
@@ -197,6 +193,28 @@ export const Header: React.FC = () => {
                     >
                       {t.nav.viewAllServices} →
                     </a>
+                    <div className="flex items-center gap-4 text-xs font-semibold text-slate-700">
+                      <a
+                        href="/realisations"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavClick('/realisations');
+                        }}
+                        className="hover:text-[#0b3d2e] hover:underline"
+                      >
+                        {t.nav.gallery}
+                      </a>
+                      <a
+                        href="/guides"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavClick('/guides');
+                        }}
+                        className="hover:text-[#0b3d2e] hover:underline"
+                      >
+                        {t.nav.guides}
+                      </a>
+                    </div>
                   </div>
                 </div>
               )}
@@ -264,10 +282,10 @@ export const Header: React.FC = () => {
                   </div>
                   <div className="mt-4 border-t border-slate-200 pt-3">
                     <a
-                      href="/#secteurs"
+                      href="/zones-desservies"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('/#secteurs');
+                        handleNavClick('/zones-desservies');
                       }}
                       className="text-sm font-semibold text-[#0b3d2e] hover:underline"
                     >
@@ -399,9 +417,19 @@ export const Header: React.FC = () => {
             className="flex h-full w-full max-w-sm flex-col overflow-y-auto bg-white p-6 shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-              <span className="font-display text-lg font-extrabold text-[#0b3d2e]">
-                {SITE_CONFIG.shortName}
-              </span>
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/images/logo-raviva-nettoyage-tapis-montreal.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={36}
+                  height={41}
+                  className="h-9 w-auto shrink-0 object-contain"
+                />
+                <span className="font-display text-lg font-extrabold text-[#0b3d2e]">
+                  {SITE_CONFIG.shortName}
+                </span>
+              </div>
               <button
                 type="button"
                 aria-label={t.a11y.closeMenu}
@@ -537,9 +565,41 @@ export const Header: React.FC = () => {
                         {region.name[locale]}
                       </a>
                     ))}
+                    <a
+                      href="/zones-desservies"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick('/zones-desservies');
+                      }}
+                      className="flex min-h-[40px] items-center rounded-md px-3 py-1.5 text-sm font-semibold text-[#0b3d2e] hover:bg-slate-100"
+                    >
+                      {t.nav.viewAllAreas}
+                    </a>
                   </div>
                 )}
               </div>
+
+              <a
+                href="/realisations"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('/realisations');
+                }}
+                className="flex min-h-[44px] items-center rounded-lg px-3 text-base font-medium text-slate-900 hover:bg-slate-100"
+              >
+                {t.nav.gallery}
+              </a>
+
+              <a
+                href="/guides"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('/guides');
+                }}
+                className="flex min-h-[44px] items-center rounded-lg px-3 text-base font-medium text-slate-900 hover:bg-slate-100"
+              >
+                {t.nav.guides}
+              </a>
 
               <a
                 href="/faq"

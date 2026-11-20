@@ -2,6 +2,7 @@ import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ConsentProvider } from './context/ConsentContext';
 import { RouterProvider, useRouter } from './context/RouterContext';
+import { CmsProvider } from './context/CmsContext';
 import { ACTIVE_SERVICES } from './config/services.config';
 import { REGIONS_CONFIG } from './config/locations.config';
 import { Header } from './components/layout/Header';
@@ -11,6 +12,10 @@ import { QuickQuoteModal } from './components/quote/QuickQuoteModal';
 import { HomePage } from './pages/HomePage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { AreaDetailPage } from './pages/AreaDetailPage';
+import { AreasDirectoryPage } from './pages/AreasDirectoryPage';
+import { GuidesPage } from './pages/GuidesPage';
+import { GalleryPage } from './pages/GalleryPage';
+import { DashboardPage } from './pages/DashboardPage';
 import { QuotePage } from './pages/QuotePage';
 import { AboutPage, ContactPage, FaqPage } from './pages/SecondaryPages';
 import {
@@ -33,6 +38,22 @@ const RouteView: React.FC = () => {
   }
   if (normalized === '/soumission') {
     return <QuotePage />;
+  }
+  if (normalized === '/zones-desservies') {
+    return <AreasDirectoryPage />;
+  }
+  if (normalized === '/realisations') {
+    return <GalleryPage />;
+  }
+  if (normalized === '/guides') {
+    return <GuidesPage />;
+  }
+  if (normalized.startsWith('/guides/')) {
+    const slug = normalized.replace('/guides/', '');
+    return <GuidesPage slug={slug} />;
+  }
+  if (normalized === '/dashboard') {
+    return <DashboardPage />;
   }
   if (normalized === '/faq') {
     return <FaqPage />;
@@ -69,6 +90,10 @@ const RouteView: React.FC = () => {
     const matched = ACTIVE_SERVICES.find((s) => s.id === 'eco-stain-protector');
     if (matched) return <ServiceDetailPage service={matched} />;
   }
+  if (normalized === '/degat-eau' || normalized === '/restauration-degat-eau') {
+    const matched = ACTIVE_SERVICES.find((s) => s.id === 'water-damage-restoration');
+    if (matched) return <ServiceDetailPage service={matched} />;
+  }
 
   if (normalized.startsWith('/services/')) {
     const slug = normalized.replace('/services/', '');
@@ -94,17 +119,19 @@ export default function App() {
   return (
     <LanguageProvider>
       <ConsentProvider>
-        <RouterProvider>
-          <div className="flex min-h-screen flex-col bg-white text-slate-900">
-            <Header />
-            <main id="main-content" className="flex-1 focus:outline-none">
-              <RouteView />
-            </main>
-            <Footer />
-            <QuickQuoteModal />
-            <CookieConsent />
-          </div>
-        </RouterProvider>
+        <CmsProvider>
+          <RouterProvider>
+            <div className="flex min-h-screen flex-col bg-white text-slate-900">
+              <Header />
+              <main id="main-content" className="flex-1 focus:outline-none">
+                <RouteView />
+              </main>
+              <Footer />
+              <QuickQuoteModal />
+              <CookieConsent />
+            </div>
+          </RouterProvider>
+        </CmsProvider>
       </ConsentProvider>
     </LanguageProvider>
   );

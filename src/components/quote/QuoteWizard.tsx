@@ -34,7 +34,9 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
   const [step, setStep] = useState<number>(1);
   const totalSteps = 6;
 
-  // Step 1: Services
+  // Step 1: Sector, Primary Need & Services
+  const [sector, setSector] = useState<'residential' | 'commercial'>('residential');
+  const [primaryNeed, setPrimaryNeed] = useState<string>('tapis');
   const [selectedServices, setSelectedServices] = useState<ServiceId[]>(
     initialServiceId ? [initialServiceId] : ['wall-to-wall-carpet']
   );
@@ -85,6 +87,17 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
   }, [photos]);
 
   const postalStatus = postalCode.trim().length >= 6 ? validateCanadianPostalCode(postalCode) : null;
+
+  const handleNeedCategorySelect = (catId: string, serviceIds: string[]) => {
+    setPrimaryNeed(catId);
+    const validIds = serviceIds.filter((id): id is ServiceId =>
+      ACTIVE_SERVICES.some((s) => s.id === id)
+    );
+    if (validIds.length > 0) {
+      setSelectedServices(validIds);
+      setErrors((prev) => ({ ...prev, services: '' }));
+    }
+  };
 
   const toggleService = (id: ServiceId) => {
     setSelectedServices((prev) =>
@@ -186,6 +199,8 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
     const payload = {
       locale,
       source: compact ? 'quick_modal' : 'wizard',
+      sector,
+      primary_need: primaryNeed,
       selected_services: selectedServices,
       property_type: propertyType,
       specific_needs: specificNeeds,
@@ -212,6 +227,14 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
     };
 
     try {
+      try {
+        const existing = JSON.parse(localStorage.getItem('raviva_recent_quotes') || '[]');
+        existing.unshift(payload);
+        localStorage.setItem('raviva_recent_quotes', JSON.stringify(existing.slice(0, 15)));
+      } catch {
+        // Ignore local storage fallback error
+      }
+
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
       const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
@@ -226,15 +249,6 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
           },
           body: JSON.stringify(payload),
         });
-      } else {
-        // Store locally when external backend keys are not configured
-        try {
-          const existing = JSON.parse(localStorage.getItem('raviva_recent_quotes') || '[]');
-          existing.unshift(payload);
-          localStorage.setItem('raviva_recent_quotes', JSON.stringify(existing.slice(0, 5)));
-        } catch {
-          // Ignore storage fallback error
-        }
       }
 
       const refCode = `RV-${Date.now().toString().slice(-6)}`;
@@ -322,11 +336,74 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
 
       {/* Step 1: Service Selection */}
       {step === 1 && (
-        <fieldset className="space-y-4">
-          <legend className="font-display text-lg font-bold text-slate-900">
-            {t.quoteForm.steps.s1Title}
-          </legend>
-          <p className="text-sm text-slate-600">{t.quoteForm.steps.s1Subtitle}</p>
+        <fieldset className="space-y-5">
+          <div>
+            <legend className="font-display text-lg font-bold text-slate-900">
+              {t.quoteForm.steps.s1Title}
+            </legend>
+            <p className="mt-1 text-sm text-slate-600">{t.quoteForm.steps.s1Subtitle}</p>
+          </div>
+
+          {/* Direct Sector Selector (Residential / Commercial) */}
+          <div>
+            <span className="block text-xs font-bold text-slate-700">
+              {t.quoteForm.sectorLabel}
+            </span>
+            <div className="mt-2 grid grid-cols-2 gap-2.5">
+              {t.quoteForm.sectors.map((sec) => {
+                const active = sector === sec.id;
+                return (
+                  <button
+                    key={sec.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => {
+                      setSector(sec.id);
+                      if (sec.id === 'commercial') {
+                        setPropertyType('commercial');
+                      } else if (propertyType === 'commercial') {
+                        setPropertyType('house');
+                      }
+                    }}
+                    className={`min-h-[44px] rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ${
+                      active
+                        ? 'border-[#0b3d2e] bg-[#0b3d2e] text-white'
+                        : 'border-slate-300 bg-white text-slate-800 hover:bg-slate-50'
+                    }`}
+                  >
+                    {sec.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Primary Need Quick Selector */}
+          <div>
+            <span className="block text-xs font-bold text-slate-700">
+              {t.quoteForm.needCategoryLabel}
+            </span>
+            <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {t.quoteForm.needCategories.map((cat) => {
+                const active = primaryNeed === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => handleNeedCategorySelect(cat.id, cat.serviceIds)}
+                    className={`min-h-[42px] rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
+                      active
+                        ? 'border-[#0b3d2e] bg-[#f4f7f5] text-[#0b3d2e]'
+                        : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {ACTIVE_SERVICES.map((srv) => {

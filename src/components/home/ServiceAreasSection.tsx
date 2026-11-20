@@ -134,10 +134,22 @@ export const ServiceAreasSection: React.FC = () => {
                   {region.description[locale]}
                 </p>
                 <ul className="mt-4 space-y-1.5 border-t border-slate-100 pt-3 text-sm text-slate-700">
-                  {region.cities.map((city) => (
+                  {region.cities.slice(0, 6).map((city) => (
                     <li key={city.slug}>{city.name}</li>
                   ))}
                 </ul>
+                <div className="mt-4 border-t border-slate-100 pt-3">
+                  <a
+                    href="/zones-desservies"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate('/zones-desservies');
+                    }}
+                    className="text-xs font-semibold text-[#0b3d2e] hover:underline"
+                  >
+                    + {region.cities.length} {locale === 'fr' ? 'secteurs → Voir les 75 municipalités' : 'areas → View all 75 municipalities'}
+                  </a>
+                </div>
               </div>
             ))}
           </div>

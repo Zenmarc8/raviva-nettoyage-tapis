@@ -19,8 +19,17 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Direct Contact */}
           <div>
-            <div className="font-display text-lg font-extrabold text-white">
-              {SITE_CONFIG.companyName}
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/logo-raviva-nettoyage-tapis-montreal.png"
+                alt={SITE_CONFIG.companyName}
+                width={44}
+                height={50}
+                className="h-11 w-auto shrink-0 rounded-lg bg-white p-1 object-contain"
+              />
+              <div className="font-display text-lg font-extrabold text-white">
+                {SITE_CONFIG.companyName}
+              </div>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-slate-300">{t.footer.tagline}</p>
 
@@ -93,6 +102,42 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/zones-desservies"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/zones-desservies');
+                  }}
+                  className="focus-light font-semibold text-emerald-300 hover:underline"
+                >
+                  {t.footer.allZonesLink} →
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/realisations"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/realisations');
+                  }}
+                  className="focus-light text-slate-300 transition-colors hover:text-white"
+                >
+                  {t.footer.galleryLink}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/guides');
+                  }}
+                  className="focus-light text-slate-300 transition-colors hover:text-white"
+                >
+                  {t.footer.guidesLink}
+                </a>
+              </li>
               <li className="pt-2">
                 <a
                   href="/soumission"
@@ -160,6 +205,18 @@ export const Footer: React.FC = () => {
                   className="focus-light text-slate-300 hover:text-white"
                 >
                   {t.footer.termsLink}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/dashboard"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/dashboard');
+                  }}
+                  className="focus-light text-slate-400 hover:text-white"
+                >
+                  {t.footer.dashboardLink}
                 </a>
               </li>
               <li className="pt-1">
