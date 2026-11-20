@@ -191,3 +191,45 @@ CREATE POLICY "Authenticated upload site-media bucket"
 CREATE POLICY "Authenticated delete site-media bucket"
   ON storage.objects FOR DELETE TO authenticated
   USING (bucket_id = 'site-media');
+
+-- 6. QUOTE REQUESTS (Direct QuoteWizard & GHL webhook sync table)
+CREATE TABLE IF NOT EXISTS public.quote_requests (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  site_id UUID REFERENCES public.sites(id) ON DELETE SET NULL,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  company_name TEXT,
+  phone TEXT NOT NULL,
+  email TEXT NOT NULL,
+  city TEXT NOT NULL,
+  postal_code TEXT NOT NULL DEFAULT '',
+  selected_services JSONB NOT NULL DEFAULT '[]'::jsonb,
+  property_type TEXT NOT NULL CHECK (property_type IN ('commercial', 'residential')),
+  preferred_timeframe TEXT NOT NULL DEFAULT '',
+  notes TEXT NOT NULL DEFAULT '',
+  locale TEXT NOT NULL DEFAULT 'fr' CHECK (locale IN ('fr', 'en')),
+  source TEXT NOT NULL DEFAULT 'raviva-website',
+  consent_partner_sharing BOOLEAN NOT NULL DEFAULT false,
+  consent_timestamp TIMESTAMPTZ,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  CONSTRAINT quote_requests_residential_consent CHECK (
+    property_type = 'commercial'
+    OR (
+      property_type = 'residential'
+      AND consent_partner_sharing = true
+      AND consent_timestamp IS NOT NULL
+    )
+  )
+);
+
+ALTER TABLE public.quote_requests ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Public submit quote_requests"
+  ON public.quote_requests FOR INSERT
+  WITH CHECK (
+    property_type = 'commercial'
+    OR (property_type = 'residential' AND consent_partner_sharing = true AND consent_timestamp IS NOT NULL)
+  );
+
+CREATE POLICY "Admin full access quote_requests"
+  ON public.quote_requests FOR ALL TO authenticated USING (true) WITH CHECK (true);

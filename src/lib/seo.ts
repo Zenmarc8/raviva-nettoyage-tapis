@@ -101,14 +101,39 @@ export function buildLocalBusinessSchema(site: SiteRecord): Record<string, unkno
   const isConfigured = (val: string) =>
     Boolean(val && !val.includes('[À CONFIGURER'));
 
+  const areaSet = Array.from(
+    new Set([
+      'Montréal',
+      'Laval',
+      'Longueuil',
+      'Brossard',
+      'Rive-Sud',
+      'Rive-Nord',
+      ...site.served_municipalities,
+    ])
+  );
+
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: site.brand_name,
     url: origin,
-    ...(isConfigured(site.phone) ? { telephone: site.phone } : {}),
+    logo: `${origin}/images/logo-raviva-nettoyage-tapis-montreal.png`,
+    founder: {
+      '@type': 'Person',
+      name: 'Marc Lemonnier',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+    ],
+    ...(isConfigured(site.phone) ? { telephone: site.phone } : { telephone: '+1-514-820-0368' }),
     ...(isConfigured(site.email) ? { email: site.email } : {}),
-    areaServed: site.served_municipalities.map((name) => ({
+    areaServed: areaSet.map((name) => ({
       '@type': 'City',
       name,
     })),

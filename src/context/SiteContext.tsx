@@ -1,5 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { INITIAL_SITES } from '../data/seedData';
+import { SITE_CONFIG } from '../config/site.config';
 import {
   fetchAllSites,
   fetchArticlesBySite,
@@ -14,9 +15,21 @@ import type {
   ArticleRecord,
   InternalLinkRecord,
   Language,
+  LeadCategory,
   SiteMediaRecord,
   SiteRecord,
 } from '../types/database';
+
+declare global {
+  interface Window {
+    leadConnector?: {
+      chatWidget?: {
+        openWidget?: () => void;
+        closeWidget?: () => void;
+      };
+    };
+  }
+}
 
 interface SiteContextValue {
   site: SiteRecord;
@@ -33,6 +46,13 @@ interface SiteContextValue {
   a11y: AccessibilitySettings;
   updateA11y: (patch: Partial<AccessibilitySettings>) => void;
   resetA11y: () => void;
+  quoteModalOpen: boolean;
+  quoteModalType: LeadCategory;
+  openQuoteModal: (type?: LeadCategory) => void;
+  closeQuoteModal: () => void;
+  aiAssistantOpen: boolean;
+  openAiAssistant: () => void;
+  closeAiAssistant: () => void;
 }
 
 const DEFAULT_A11Y: AccessibilitySettings = {
@@ -55,6 +75,10 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [articles, setArticles] = useState<ArticleRecord[]>([]);
   const [internalLinks, setInternalLinks] = useState<InternalLinkRecord[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [quoteModalOpen, setQuoteModalOpen] = useState<boolean>(false);
+  const [quoteModalType, setQuoteModalType] = useState<LeadCategory>('commercial');
+  const [aiAssistantOpen, setAiAssistantOpen] = useState<boolean>(false);
+
   const [lang, setLangState] = useState<Language>(() => {
     try {
       const saved = window.localStorage.getItem(LANG_STORAGE_KEY);
@@ -102,6 +126,24 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     void loadData();
   }, [loadData]);
+
+  // Optional GoHighLevel Chat Widget Loader (non-blocking)
+  useEffect(() => {
+    const widgetId = SITE_CONFIG.integrations.ghlChatWidgetId;
+    if (!widgetId) return;
+    if (document.querySelector(`script[data-ghl-widget-id="${widgetId}"]`)) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+    script.setAttribute(
+      'data-resources-url',
+      'https://widgets.leadconnectorhq.com/chat-widget/loader.js'
+    );
+    script.setAttribute('data-widget-id', widgetId);
+    script.setAttribute('data-ghl-widget-id', widgetId);
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -152,6 +194,28 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setA11y(DEFAULT_A11Y);
   }, []);
 
+  const openQuoteModal = useCallback((type: LeadCategory = 'commercial') => {
+    setQuoteModalType(type);
+    setQuoteModalOpen(true);
+  }, []);
+
+  const closeQuoteModal = useCallback(() => {
+    setQuoteModalOpen(false);
+  }, []);
+
+  const openAiAssistant = useCallback(() => {
+    const widgetId = SITE_CONFIG.integrations.ghlChatWidgetId;
+    if (widgetId && window.leadConnector?.chatWidget?.openWidget) {
+      window.leadConnector.chatWidget.openWidget();
+      return;
+    }
+    setAiAssistantOpen(true);
+  }, []);
+
+  const closeAiAssistant = useCallback(() => {
+    setAiAssistantOpen(false);
+  }, []);
+
   return (
     <SiteContext.Provider
       value={{
@@ -169,6 +233,13 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
         a11y,
         updateA11y,
         resetA11y,
+        quoteModalOpen,
+        quoteModalType,
+        openQuoteModal,
+        closeQuoteModal,
+        aiAssistantOpen,
+        openAiAssistant,
+        closeAiAssistant,
       }}
     >
       {children}
