@@ -186,7 +186,7 @@ export const Header: React.FC = () => {
                       </a>
                     ))}
                   </div>
-                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3">
+                  <div className="mt-4 border-t border-slate-200 pt-3">
                     <a
                       href="/#services"
                       onClick={(e) => {
@@ -197,28 +197,6 @@ export const Header: React.FC = () => {
                     >
                       {t.nav.viewAllServices} →
                     </a>
-                    <div className="flex items-center gap-4 text-xs font-semibold text-slate-700">
-                      <a
-                        href="/realisations"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavClick('/realisations');
-                        }}
-                        className="hover:text-[#0b3d2e] hover:underline"
-                      >
-                        {t.nav.gallery}
-                      </a>
-                      <a
-                        href="/guides"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavClick('/guides');
-                        }}
-                        className="hover:text-[#0b3d2e] hover:underline"
-                      >
-                        {t.nav.guides}
-                      </a>
-                    </div>
                   </div>
                 </div>
               )}
@@ -286,10 +264,10 @@ export const Header: React.FC = () => {
                   </div>
                   <div className="mt-4 border-t border-slate-200 pt-3">
                     <a
-                      href="/zones-desservies"
+                      href="/#secteurs"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('/zones-desservies');
+                        handleNavClick('/#secteurs');
                       }}
                       className="text-sm font-semibold text-[#0b3d2e] hover:underline"
                     >
@@ -559,41 +537,9 @@ export const Header: React.FC = () => {
                         {region.name[locale]}
                       </a>
                     ))}
-                    <a
-                      href="/zones-desservies"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick('/zones-desservies');
-                      }}
-                      className="flex min-h-[40px] items-center rounded-md px-3 py-1.5 text-sm font-semibold text-[#0b3d2e] hover:bg-slate-100"
-                    >
-                      {t.nav.viewAllAreas}
-                    </a>
                   </div>
                 )}
               </div>
-
-              <a
-                href="/realisations"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('/realisations');
-                }}
-                className="flex min-h-[44px] items-center rounded-lg px-3 text-base font-medium text-slate-900 hover:bg-slate-100"
-              >
-                {t.nav.gallery}
-              </a>
-
-              <a
-                href="/guides"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('/guides');
-                }}
-                className="flex min-h-[44px] items-center rounded-lg px-3 text-base font-medium text-slate-900 hover:bg-slate-100"
-              >
-                {t.nav.guides}
-              </a>
 
               <a
                 href="/faq"

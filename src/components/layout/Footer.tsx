@@ -93,42 +93,6 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/zones-desservies"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate('/zones-desservies');
-                  }}
-                  className="focus-light font-semibold text-emerald-300 hover:underline"
-                >
-                  {t.footer.allZonesLink} →
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/realisations"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate('/realisations');
-                  }}
-                  className="focus-light text-slate-300 transition-colors hover:text-white"
-                >
-                  {t.footer.galleryLink}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/guides"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate('/guides');
-                  }}
-                  className="focus-light text-slate-300 transition-colors hover:text-white"
-                >
-                  {t.footer.guidesLink}
-                </a>
-              </li>
               <li className="pt-2">
                 <a
                   href="/soumission"
@@ -196,18 +160,6 @@ export const Footer: React.FC = () => {
                   className="focus-light text-slate-300 hover:text-white"
                 >
                   {t.footer.termsLink}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/dashboard"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate('/dashboard');
-                  }}
-                  className="focus-light text-slate-400 hover:text-white"
-                >
-                  {t.footer.dashboardLink}
                 </a>
               </li>
               <li className="pt-1">

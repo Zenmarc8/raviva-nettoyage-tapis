@@ -23,81 +23,26 @@ export const FR_DICTIONARY: TranslationDictionary = {
     home: 'Accueil',
     about: 'À propos',
     services: 'Services',
-    areas: 'Zones desservies',
-    guides: 'Guides',
-    gallery: 'Réalisations',
+    areas: 'Secteurs desservis',
     faq: 'FAQ',
     contact: 'Contact',
-    freeQuote: 'Soumission directe',
+    freeQuote: 'Soumission gratuite',
     callNow: 'Appeler maintenant',
     textUs: 'Envoyer un texto',
-    viewAllServices: 'Voir tous les services opérés directement',
-    viewAllAreas: 'Voir les 75 municipalités desservies',
+    viewAllServices: 'Voir tous nos services tapis & textiles',
+    viewAllAreas: 'Voir toutes les municipalités desservies',
   },
   hero: {
-    primaryCta: 'Demander une pré-inspection gratuite',
+    primaryCta: 'Demander une soumission gratuite',
     callCta: 'Appeler le 514-820-0368',
     smsCta: 'Texter une photo',
     reassuranceItems: [
-      'Exécution directe à 100 % par le propriétaire-opérateur',
-      'Aucun frais caché pour bouger les meubles standards',
-      'Double extraction & garantie de satisfaction',
+      'Extraction haute température à faible humidité',
+      'Produits biodégradables sans danger pour enfants et animaux',
+      'Assurance responsabilité civile complète',
     ],
     imageAlt:
       'Salon montréalais lumineux avec un tapis beige fraîchement nettoyé en profondeur et un divan sectionnel en lin',
-  },
-  raviva6x: {
-    kicker: 'Méthode signature officielle',
-    heading: 'Protocole exclusif RAVIVA 6X™ en 6 étapes',
-    subheading:
-      'Chaque mandat résidentiel ou commercial est exécuté personnellement par Marc Lemonnier selon un protocole éprouvé sur plus de 35 ans de terrain.',
-    steps: [
-      {
-        letter: 'R',
-        title: 'Retrait des saletés sèches',
-        description: 'Aspiration rigoureuse en profondeur pour déloger sable, poussières fines et débris secs avant tout mouillage.',
-      },
-      {
-        letter: 'A',
-        title: 'Analyse et inspection',
-        description: 'Pré-inspection gratuite complète et rapport d’état des fibres, teintures et zones sensibles.',
-      },
-      {
-        letter: 'V',
-        title: 'Vaporisation et prétraitement',
-        description: 'Application ciblée des solutions biodégradables non toxiques selon le type de fibre et de tache.',
-      },
-      {
-        letter: 'I',
-        title: 'Intervention mécanique',
-        description: 'Agitation en profondeur adaptée à la fibre pour décoller les contaminants et graisses incrustés.',
-      },
-      {
-        letter: 'V',
-        title: 'Vidange et extraction des contaminants',
-        description: 'Extraction puissante avec double passe et rinçage pH neutre pour un séchage rapide sans résidu.',
-      },
-      {
-        letter: 'A',
-        title: 'Assèchement et assurance qualité',
-        description: 'Accélération du séchage si requis et validation finale de votre entière satisfaction sur place.',
-      },
-    ],
-  },
-  accreditationsSection: {
-    kicker: '35 ans d’expertise, diplômes et accréditations',
-    heading: 'Un maître-opérateur accrédité, zéro sous-traitance',
-    subheading:
-      'Plus de 35 ans d’expérience personnelle terrain en nettoyage spécialisé, élimination des odeurs et restauration après sinistre — jamais délégué à des tiers.',
-    iicrcTitle: 'Accréditation IICRC & formation technique',
-    iicrcDesc:
-      'Protocoles conformes aux normes de l’industrie (IICRC) pour l’identification des fibres, le détachage sécuritaire, la désinfection et l’assèchement après dégât d’eau.',
-    directTitle: 'Exécution directe à 100 % sans intermédiaire',
-    directDesc:
-      'La personne qui répond au 514-820-0368 effectue la pré-inspection gratuite et réalise personnellement les travaux chez vous ou dans votre entreprise.',
-    manageInAdminNote:
-      'Les certificats, diplômes et preuves historiques d’activité sont gérés et affichés directement depuis la médiathèque /dashboard.',
-    viewGalleryCta: 'Voir les diplômes et réalisations',
   },
   standardsBand: {
     heading: 'Normes techniques & engagements d’intervention',
@@ -134,46 +79,46 @@ export const FR_DICTIONARY: TranslationDictionary = {
   },
   services: {
     'wall-to-wall-carpet': {
-      title: 'Nettoyage en profondeur de tapis et carpettes',
+      title: 'Nettoyage de tapis mur à mur',
       shortDesc:
-        'Toutes les méthodes adaptées à la fibre : extraction à l’eau chaude avec roto-shampoing, encapsulation, mousse sèche, bonnet et poudre sèche.',
-      categoryLabel: 'Résidentiel & Commercial · Protocole RAVIVA 6X™',
+        'Extraction à l’eau chaude haute puissance pour chambres, sous-sols, corridors et escaliers. Séchage rapide en 4 à 6 heures.',
+      categoryLabel: 'Résidentiel · Extraction haute température',
       fullDesc:
-        'Selon l’état du tapis et la nature de la fibre, j’applique la méthode la plus sûre : extraction à l’eau chaude avec roto-shampoing et double passe, encapsulation à séchage rapide, mousse sèche, bonnet ou poudre sèche. Pré-inspection gratuite, aucun frais caché pour bouger les meubles standards et possibilité d’ajouter un protecteur au fluorine.',
+        'Notre protocole en 5 étapes déloge les particules abrasives incrustées à la base des fibres, neutralise les résidus de sel d’hiver et redonne du gonflant aux corridors achalandés sans détremper le sous-tapis.',
       processPoints: [
-        'Pré-inspection gratuite : identification de la fibre et choix de la méthode (extraction, roto-shampoing, encapsulation, mousse sèche, bonnet ou poudre sèche)',
-        'Déplacement sans frais des chaises et meubles légers standards avant l’aspiration sèche',
-        'Prétraitement biodégradable non toxique et agitation mécanique en profondeur',
-        'Double extraction haute dépression et application optionnelle d’un protecteur au fluorine',
+        'Inspection de la fibre (nylon, polyester, oléfine, laine) et des zones de passage',
+        'Prétraitement enzymatique ou végétal ciblé sur les allées et marches d’escalier',
+        'Agitation douce mécanique puis extraction à l’eau chaude haute récupération',
+        'Rinçage stabilisateur au pH neutre et brossage de finition pour un séchage uniforme',
       ],
       idealFor: [
-        'Tapis mur à mur résidentiels (chambres, salons, sous-sols, escaliers)',
-        'Tapis commerciaux et dalles de bureau nécessitant un séchage rapide',
-        'Familles exigeant zéro résidu savonneux ni produit toxique',
+        'Chambres à coucher, salons et sous-sols familiaux',
+        'Escaliers recouverts de moquette et paliers',
+        'Maisons avec enfants en bas âge ou animaux domestiques',
       ],
       faqSpecific: [
         {
-          q: 'Quelles méthodes utilisez-vous selon le type de tapis ?',
-          a: 'Selon la fibre et l’usage : extraction à l’eau chaude avec roto-shampoing, encapsulation, mousse sèche, bonnet ou poudre sèche.',
+          q: 'Combien de temps faut-il pour que le tapis soit sec ?',
+          a: 'En moyenne de 4 à 6 heures grâce à notre extraction haute dépression et au contrôle précis du débit d’eau.',
         },
         {
-          q: 'Y a-t-il des frais cachés pour déplacer les meubles standards ?',
-          a: 'Non. Le déplacement des meubles standards légers (chaises, tables d’appoint) est inclus sans frais lors de l’intervention.',
+          q: 'Faut-il déplacer tous les meubles avant votre arrivée ?',
+          a: 'Nous déplaçons sans frais les petits meubles légers (chaises, tables d’appoint). Les lits, bibliothèques et meubles lourds restent en place et nous nettoyons soigneusement autour.',
         },
       ],
     },
     'area-rugs': {
       title: 'Nettoyage de carpettes & tapis fins',
       shortDesc:
-        'Soin sur mesure pour la laine, la soie, la viscose et les tapis persans ou orientaux. Test de teinture, mousse sèche ou lavage pH neutre.',
+        'Soin sur mesure pour la laine, la soie, la viscose et les tapis persans ou orientaux. Test de solidité des teintures et pH contrôlé.',
       categoryLabel: 'Fibres délicates · Soin spécialisé',
       fullDesc:
-        'Les tapis noués à la main, carpettes en laine et tissages en viscose exigent une chimie douce et un contrôle strict de l’humidité (mousse sèche, poudre sèche ou extraction contrôlée) afin d’éviter tout transfert de couleur.',
+        'Les tapis noués à la main, carpettes en laine de Nouvelle-Zélande et tissages en viscose exigent une chimie douce et un contrôle strict de l’humidité afin d’éviter tout transfert de couleur ou rétrécissement.',
       processPoints: [
-        'Test systématique de stabilité des teintures lors de la pré-inspection gratuite',
+        'Test systématique de stabilité des teintures avant tout mouillage',
         'Dépoussiérage sec en profondeur pour extraire le sable logé dans le nouage',
-        'Lavage au pH neutre, mousse sèche ou poudre sèche adapté aux fibres naturelles',
-        'Séchage ventilé et brossage des franges dans le sens du poil',
+        'Lavage au pH neutre adapté à la laine ou aux fibres cellulosiques',
+        'Séchage à plat ventilé et brossage des franges dans le sens du poil',
       ],
       idealFor: [
         'Tapis persans, orientaux et kilims tissés main',
@@ -183,32 +128,32 @@ export const FR_DICTIONARY: TranslationDictionary = {
       faqSpecific: [
         {
           q: 'Nettoyez-vous les carpettes directement sur place ?',
-          a: 'Oui, j’évalue directement chaque carpette lors de la pré-inspection gratuite et j’applique la méthode appropriée en protégeant vos planchers.',
+          a: 'Oui pour la majorité des carpettes sur plancher protégé ; pour les pièces très précieuses ou saturées d’odeurs, nous proposons l’évaluation préalable avec Marc Lemonnier.',
         },
       ],
     },
     'upholstery-sofas': {
-      title: 'Nettoyage de meubles rembourrés et du cuir',
+      title: 'Nettoyage de meubles rembourrés & sofas',
       shortDesc:
-        'Extraction à l’eau chaude, shampoing humide, mousse sèche à l’éponge de mer naturelle, méthode combinée Dry-Wet-Dry, nettoyage et hydratation du cuir.',
-      categoryLabel: 'Résidentiel & Commercial · Tissus & cuir',
+        'Divans, sectionnels, fauteuils et chaises de salle à manger (tissus codes W, S, WS et cuir). Élimination du sébum et des cernes.',
+      categoryLabel: 'Résidentiel · Tissus & cuir',
       fullDesc:
-        'Des divans du quotidien aux tissus les plus délicats et au cuir véritable, chaque meuble reçoit la technique exacte requise : extraction à l’eau chaude, shampoing humide, mousse sèche appliquée à l’éponge de mer naturelle, méthode combinée Dry-Wet-Dry ou nettoyage et hydratation nourrissante du cuir.',
+        'Les accoudoirs et appuie-tête accumulent sébum, poussières fines et allergènes. Nous utilisons des buses d’extraction à faible pénétration qui assainissent le tissu sans mouiller la mousse interne.',
       processPoints: [
-        'Vérification du code manufacturier (W, S, WS, X ou cuir) lors de la pré-inspection gratuite',
-        'Choix de la méthode : extraction eau chaude, shampoing humide, mousse sèche à l’éponge de mer naturelle ou Dry-Wet-Dry',
-        'Nettoyage en douceur et hydratation protectrice pour les divans et fauteuils en cuir',
-        'Double extraction contrôlée sur tissus et finition soignée des coutures et coussins',
+        'Lecture du code d’entretien manufacturier (W, S, WS ou X) et test sur zone cachée',
+        'Aspiration fine des coutures, plis et coussins amovibles',
+        'Application d’un nettoyant végétal émulsifiant doux sur les taches de contact',
+        'Extraction à basse pression et séchage accéléré des coussins',
       ],
       idealFor: [
-        'Divans, sectionnels, causeuses, fauteuils et chaises rembourrées',
-        'Tissus fragiles (lin, velours, soie, code S) traités à l’éponge de mer naturelle ou Dry-Wet-Dry',
-        'Canapés et fauteuils en cuir véritable nécessitant nettoyage et hydratation',
+        'Divans 3 places, causeuses et grands sectionnels en L',
+        'Chaises de cuisine rembourrées et tabourets de comptoir',
+        'Fauteuils en microfibre, lin mélangé, velours ou cuir',
       ],
       faqSpecific: [
         {
-          q: 'Qu’est-ce que la méthode mousse sèche à l’éponge de mer naturelle ou Dry-Wet-Dry ?',
-          a: 'Ces méthodes contrôlent strictement l’humidité sur les tissus délicats ou à code S pour nettoyer en profondeur sans jamais saturer le rembourrage interne.',
+          q: 'Pouvez-vous nettoyer un divan portant le code « S » (solvant) ?',
+          a: 'Oui. Nous adaptons la méthode (nettoyage à faible humidité ou solvant sécuritaire) selon l’étiquette exacte de votre manufacturier.',
         },
       ],
     },
@@ -263,52 +208,27 @@ export const FR_DICTIONARY: TranslationDictionary = {
       ],
     },
     'pet-odor-urine': {
-      title: 'Élimination spécialisée des odeurs de tous types',
+      title: 'Enlèvement des odeurs (animaux, urine, humidité)',
       shortDesc:
-        'Traitement ciblé contre l’urine d’animaux, la fumée, l’humidité, la moufette et les odeurs après sinistres jusque dans la structure des fibres.',
-      categoryLabel: 'Spécialité · Neutralisation moléculaire',
+        'Traitement bio-enzymatique et neutralisation moléculaire en profondeur contre l’urine d’animaux, les odeurs de renfermé, de tabac ou d’humidité.',
+      categoryLabel: 'Spécialité · Neutralisation des odeurs',
       fullDesc:
-        'Qu’il s’agisse d’urine d’animaux, de fumée de cigarette ou d’incendie, d’odeur de moufette, d’humidité de sous-sol ou de séquelles après sinistre, les odeurs imprègnent le sous-tapis et le rembourrage. J’interviens personnellement pour neutraliser les molécules odorantes à la source plutôt que de les masquer.',
+        'Les odeurs tenaces s’infiltrent jusque dans le sous-tapis et les coussins de divan, puis réapparaissent dès que le temps devient humide. Grâce à nos méthodes issues de la restauration après sinistre, nous dégradons les molécules odorantes à la source au lieu de les masquer avec un parfum.',
       processPoints: [
-        'Localisation précise des foyers d’odeur (inspection olfactive et lumineuse)',
-        'Traitement bio-enzymatique et neutralisation moléculaire adaptée (urine, fumée, moufette, humidité)',
-        'Double extraction en profondeur jusque sous le dossier du tapis ou dans le coussin',
-        'Assainissement complémentaire et vérification finale sans parfum masquant',
+        'Localisation précise des zones imprégnées (inspection lumineuse et olfactive)',
+        'Saturation contrôlée par solution bio-enzymatique qui digère les cristaux d’acide urique',
+        'Extraction en profondeur jusque sous le dossier du tapis ou du rembourrage',
+        'Traitement neutralisant complémentaire (hydroxyle/ozone hors présence si requis)',
       ],
       idealFor: [
-        'Urine d’animaux (chiens et chats) récente ou ancienne',
-        'Odeurs de moufette, de fumée, d’humidité ou après sinistre',
-        'Tapis, sous-sols, divans et matelas imprégnés',
+        'Accidents récents ou anciens d’urine de chiens et chats',
+        'Odeurs d’humidité, de sous-sol, de tabac ou de cuisson incrustées',
+        'Remise à neuf avant prise de possession ou vente immobilière',
       ],
       faqSpecific: [
         {
-          q: 'Traitez-vous aussi les odeurs de moufette et de fumée ?',
-          a: 'Oui. Mon expérience de 35 ans en restauration après sinistre me permet de traiter efficacement l’urine d’animaux, l’humidité, la fumée et les odeurs de moufette sur les textiles.',
-        },
-      ],
-    },
-    'water-damage-restoration': {
-      title: 'Intervention et restauration après dégât d’eau',
-      shortDesc:
-        'Extraction d’urgence de l’eau sur tapis et sous-planchers, installation de déshumidificateurs et ventilateurs professionnels pour éviter moisissures et odeurs.',
-      categoryLabel: 'Urgence & Sinistre · Assèchement professionnel',
-      fullDesc:
-        'Lors d’une infiltration d’eau, d’un refoulement mineur ou d’un bris de tuyau, chaque heure compte pour sauver vos tapis et prévenir la prolifération microbienne. J’interviens directement avec de l’équipement d’extraction haute puissance, des déshumidificateurs commerciaux et des ventilateurs spécialisés.',
-      processPoints: [
-        'Inspection du taux d’humidité du tapis, du sous-tapis et des plinthes adjacentes',
-        'Extraction d’urgence à grand débit pour retirer l’eau libre immédiatement',
-        'Déploiement de déshumidificateurs et ventilateurs professionnels haute vélocité',
-        'Traitement antibactérien, désodorisation et nettoyage complet RAVIVA 6X™ une fois asséché',
-      ],
-      idealFor: [
-        'Sous-sols résidentiels suite à une infiltration d’eau ou fuite de chauffe-eau',
-        'Bureaux et locaux commerciaux touchés par un débordement',
-        'Prévention des cernes d’eau, odeurs de renfermé et moisissures',
-      ],
-      faqSpecific: [
-        {
-          q: 'Faites-vous directement l’extraction et l’installation des ventilateurs et déshumidificateurs ?',
-          a: 'Oui. J’interviens personnellement sans sous-traitance avec mon propre matériel d’extraction et d’assèchement professionnel.',
+          q: 'L’odeur revient-elle par temps humide ?',
+          a: 'Non. Contrairement aux désodorisants de surface, notre traitement enzymatique détruit les cristaux d’acide urique et les composés organiques pour empêcher le retour d’odeur lors des journées humides.',
         },
       ],
     },
@@ -370,7 +290,7 @@ export const FR_DICTIONARY: TranslationDictionary = {
       fullDesc:
         'Des tapis commerciaux propres prolongent la durée de vie de vos revêtements et améliorent la qualité de l’air intérieur. Nous intervenons en dehors de vos heures d’achalandage pour ne jamais perturber votre personnel.',
       processPoints: [
-        'Nettoyage par extraction à l’eau chaude ou encapsulation à séchage rapide',
+        'Nettoyage par extraction ou encapsulation à séchage très rapide (1 à 2 h)',
         'Entretien ciblé des entrées, corridors d’ascenseur et salles de conférence',
         'Horaires sur mesure : tôt le matin, en soirée ou la fin de semaine',
         'Programme d’entretien annuel ou semestriel avec facture commerciale',
@@ -388,27 +308,27 @@ export const FR_DICTIONARY: TranslationDictionary = {
       ],
     },
     'eco-stain-protector': {
-      title: 'Protecteur antitaches & protecteur au fluorine',
+      title: 'Protecteur antitaches écologique',
       shortDesc:
-        'Application d’un protecteur au fluorine haute performance après le nettoyage pour ralentir l’absorption des liquides et protéger contre l’usure.',
-      categoryLabel: 'Protection · Protecteur au fluorine',
+        'Barrière protectrice appliquée après le nettoyage pour ralentir l’absorption des liquides, protéger contre l’usure et faciliter vos futurs nettoyages.',
+      categoryLabel: 'Protection · Durée de vie des fibres',
       fullDesc:
-        'Une fibre fraîchement nettoyée et rincée au pH neutre est prête à recevoir un bouclier protecteur invisible. L’application de notre protecteur au fluorine crée une tension de surface qui fait perler les liquides et réduit l’adhérence de la saleté abrasive dans les zones de passage.',
+        'Une fibre fraîchement nettoyée et rincée est réceptive à une protection invisible. Notre protecteur écologique sans PFAS nocifs forme un bouclier autour de chaque fil pour vous laisser le temps d’éponger un dégât.',
       processPoints: [
-        'Application uniforme immédiatement après la double extraction sur fibre propre',
-        'Protecteur au fluorine qui freine la pénétration du café, vin rouge et jus',
-        'Protège les fibres contre l’abrasion prématurée dans les corridors et escaliers',
-        'Séchage propre sans odeur persistante',
+        'Application uniforme immédiatement après extraction sur fibre propre',
+        'Effet perlant qui retarde la pénétration du café, jus ou vin',
+        'Réduit l’adhérence de la poussière sèche dans les zones de passage',
+        'Sans odeur persistante une fois sec',
       ],
       idealFor: [
-        'Tapis mur à mur résidentiels et commerciaux achalandés',
-        'Divans pâles, sectionnels familiaux et chaises de salle à manger',
-        'Carpettes en laine fraîchement nettoyées',
+        'Sofas pâles et sectionnels familiaux fraîchement nettoyés',
+        'Tapis de salle à manger, corridors et escaliers',
+        'Carpettes en laine neuves ou récemment restaurées',
       ],
       faqSpecific: [
         {
-          q: 'Pourquoi appliquer un protecteur au fluorine après le nettoyage ?',
-          a: 'Il forme une barrière invisible autour des fibres qui vous donne le temps d’éponger un dégât avant qu’il ne tache et facilite les aspirations futures.',
+          q: 'Combien de temps dure la protection ?',
+          a: 'Selon l’achalandage de la pièce, la protection reste efficace de 12 à 18 mois ou jusqu’au prochain nettoyage en profondeur.',
         },
       ],
     },
@@ -421,9 +341,9 @@ export const FR_DICTIONARY: TranslationDictionary = {
     pillars: [
       {
         number: '01.',
-        title: 'Deuxième extraction systématique',
+        title: 'Eau maîtrisée & séchage rapide (4 à 6 h)',
         description:
-          'Nous effectuons systématiquement une deuxième passe d’extraction afin de retirer un maximum d’humidité et laisser votre tapis le plus sec possible.',
+          'Nos buses haute récupération retirent jusqu’à 95 % de l’humidité injectée. Vos tapis ne restent pas détrempés et évitent tout risque de moisissure ou d’odeur de renfermé.',
       },
       {
         number: '02.',
@@ -477,24 +397,26 @@ export const FR_DICTIONARY: TranslationDictionary = {
     ],
   },
   proofSection: {
-    kicker: 'Repères vérifiables',
-    heading: 'Plus de 35 ans d’expérience au service de vos textiles',
+    kicker: 'Repères vérifiables & avis clients',
+    heading: 'L’expérience de 35 ans mise au service de vos textiles',
+    configurableNotice:
+      'Note de transparence : Les emplacements d’avis ci-dessous sont prêts à accueillir vos vrais avis Google vérifiés (aucun faux témoignage n’est généré).',
   },
   founderSection: {
-    kicker: 'À propos du propriétaire-opérateur',
+    kicker: 'À propos du fondateur',
     ctaButton: 'Parler avec Marc Lemonnier',
     portraitAlt:
-      'Certificat officiel IICRC de Marc Lemonnier — Raviva Nettoyage de Tapis Montréal',
+      'Portrait de Marc Lemonnier, fondateur de Raviva Nettoyage de Tapis Montréal, dans un couloir résidentiel lumineux',
   },
   beforeAfterSection: {
     kicker: 'Résultats concrets sur fibres',
-    heading: 'Réalisations réelles avant et après intervention',
+    heading: 'Avant et après intervention spécialisée',
     subheading:
-      'Photos réelles de travaux effectués sur tapis résidentiels, tapis commerciaux et taches tenaces.',
+      'Comparaison réelle des types de restauration réalisés sur tapis de passage, taches alimentaires, escaliers et divans.',
     beforeLabel: 'Avant',
     afterLabel: 'Après',
     mainImageAlt:
-      'Tache de vin rouge sur tapis beige avant et après le travail de détachage professionnel par Raviva',
+      'Comparaison avant et après sur un tapis beige : côté gauche marqué par le passage et une tache de café, côté droit propre et restauré',
     cases: [
       {
         title: 'Allée de salon et tache de café ancienne',
@@ -552,8 +474,8 @@ export const FR_DICTIONARY: TranslationDictionary = {
         a: 'Oui. Nous utilisons des solutions biodégradables d’origine végétale, sans COV nocifs et rincées à l’eau claire au pH neutre. Aucun résidu savonneux ou irritant ne demeure dans les fibres.',
       },
       {
-        q: 'Comment assurez-vous un séchage optimal de mes tapis ou de mon divan ?',
-        a: 'Nous effectuons une deuxième extraction systématique afin de laisser votre tapis le plus sec possible. Au besoin, nous pouvons également fournir des ventilateurs et déshumidificateurs (moyennant un léger supplément) pour accélérer le séchage.',
+        q: 'Combien de temps faut-il pour que mes tapis ou mon divan sèchent ?',
+        a: 'La plupart des tapis sèchent en 4 à 6 heures, et les meubles rembourrés en 3 à 5 heures. Une bonne circulation d’air (fenêtre entrouverte ou ventilateur) accélère encore le séchage.',
       },
       {
         q: 'Les taches reviennent-elles quelques jours après le nettoyage ?',
@@ -610,50 +532,22 @@ export const FR_DICTIONARY: TranslationDictionary = {
     submitting: 'Envoi en cours…',
     successTitle: 'Demande transmise avec succès',
     successBody:
-      'Merci ! Votre demande a été transmise directement à Marc Lemonnier (aucun transfert à des tiers). Je vous contacterai très rapidement pour planifier votre pré-inspection gratuite ou confirmer le rendez-vous. Urgence dégât d’eau : 514-820-0368.',
+      'Merci ! Nous avons bien reçu les détails de votre projet. Marc Lemonnier ou un membre de l’équipe Raviva vous contactera très rapidement au numéro ou courriel indiqué. Pour une urgence, appelez le 514-820-0368.',
     newRequestBtn: 'Faire une autre demande',
     steps: {
-      s1Title: '1. Secteur & besoin principal',
-      s1Subtitle: 'Indiquez votre secteur (Résidentiel ou Commercial) et les services réalisés directement par Raviva.',
+      s1Title: '1. Quels services souhaitez-vous ?',
+      s1Subtitle: 'Sélectionnez un ou plusieurs services tapis et textiles.',
       s2Title: '2. Quel est le type de propriété ?',
-      s2Subtitle: 'Cela m’aide à prévoir l’accès, le stationnement et l’équipement approprié.',
+      s2Subtitle: 'Cela nous aide à prévoir l’accès et l’équipement approprié.',
       s3Title: '3. Besoins précis et particularités',
-      s3Subtitle: 'Indiquez toute situation particulière afin d’apporter les bons produits et méthodes.',
+      s3Subtitle: 'Indiquez toute situation particulière afin d’apporter les bons produits.',
       s4Title: '4. Quantités ou dimensions approximatives',
-      s4Subtitle: 'Une estimation approximative suffit avant la pré-inspection gratuite sur place.',
+      s4Subtitle: 'Une estimation approximative suffit pour préparer votre devis.',
       s5Title: '5. Délai souhaité',
       s5Subtitle: 'Choisissez la fenêtre qui vous convient le mieux.',
-      s6Title: '6. Vos coordonnées directes & photos (optionnel)',
-      s6Subtitle: 'Formulaire direct sans intermédiaire ni transfert à des tiers. Vos renseignements servent uniquement à votre demande (Loi 25).',
+      s6Title: '6. Vos coordonnées & photos (optionnel)',
+      s6Subtitle: 'Conformément à la Loi 25, vos informations servent uniquement à traiter votre soumission.',
     },
-    sectors: [
-      { id: 'residential', label: 'Résidentiel (maison, condo, logement)' },
-      { id: 'commercial', label: 'Commercial (bureau, commerce, immeuble)' },
-    ],
-    sectorLabel: 'Secteur',
-    needCategories: [
-      {
-        id: 'tapis',
-        label: 'Tapis & Carpettes',
-        serviceIds: ['wall-to-wall-carpet', 'area-rugs', 'eco-stain-protector'],
-      },
-      {
-        id: 'meubles',
-        label: 'Meubles rembourrés / Cuir',
-        serviceIds: ['upholstery-sofas', 'mattress-sanitization'],
-      },
-      {
-        id: 'odeurs',
-        label: 'Odeurs (animaux, fumée, moufette)',
-        serviceIds: ['pet-odor-urine', 'antibacterial-treatment'],
-      },
-      {
-        id: 'degat-eau',
-        label: 'Dégât d’eau & assèchement',
-        serviceIds: ['water-damage-restoration'],
-      },
-    ],
-    needCategoryLabel: 'Type de besoin principal',
     propertyTypes: [
       { id: 'house', label: 'Maison unifamiliale / Jumelé' },
       { id: 'condo', label: 'Condo (avec ascenseur ou accès étage)' },
@@ -663,16 +557,15 @@ export const FR_DICTIONARY: TranslationDictionary = {
       { id: 'building', label: 'Immeuble / Copropriété (parties communes)' },
     ],
     specificNeeds: [
-      { id: 'wall-carpet', label: 'Tapis mur à mur (extraction, roto-shampoing, encapsulation, mousse/poudre sèche)' },
+      { id: 'wall-carpet', label: 'Tapis mur à mur (chambres / sous-sol)' },
       { id: 'stairs', label: 'Escaliers recouverts de tapis' },
       { id: 'wool-rug', label: 'Carpette en laine, soie ou tapis oriental' },
-      { id: 'stains', label: 'Taches tenaces (vin rouge, café, gras, passage)' },
-      { id: 'pet-odor', label: 'Enlèvement des odeurs (urine, fumée, humidité, moufette)' },
-      { id: 'water-damage', label: 'Dégât d’eau (extraction, déshumidificateurs & ventilateurs)' },
+      { id: 'stains', label: 'Taches tenaces (café, vin, gras, passage)' },
+      { id: 'pet-odor', label: 'Enlèvement des odeurs (animaux, urine, humidité)' },
       { id: 'antibacterial', label: 'Traitement antibactérien & assainissant' },
-      { id: 'sofa', label: 'Meubles rembourrés ou cuir (mousse sèche éponge de mer, Dry-Wet-Dry, hydratation cuir)' },
+      { id: 'sofa', label: 'Meubles rembourrés (divan, sectionnel, fauteuil)' },
       { id: 'mattress', label: 'Matelas à assainir' },
-      { id: 'protector', label: 'Ajouter un protecteur au fluorine' },
+      { id: 'protector', label: 'Ajouter un protecteur antitaches écologique' },
     ],
     quantities: {
       roomsLabel: 'Nombre de pièces avec tapis',
@@ -741,34 +634,30 @@ export const FR_DICTIONARY: TranslationDictionary = {
   },
   footer: {
     tagline:
-      'Entreprise indépendante exploitée directement par Marc Lemonnier (35+ ans d’expérience) : tapis, meubles, cuir, odeurs et restauration après dégât d’eau dans le Grand Montréal.',
-    servicesHeading: 'Services opérés directement',
-    areasHeading: 'Zones & Ressources',
-    legalHeading: 'Conformité & Admin',
+      'Spécialiste du nettoyage écologique de tapis, carpettes, meubles rembourrés et matelas dans le Grand Montréal. 35 ans d’expérience en nettoyage spécialisé.',
+    servicesHeading: 'Services spécialisés',
+    areasHeading: 'Secteurs desservis',
+    legalHeading: 'Conformité & Légal',
     accessibilityLink: 'Accessibilité (WCAG 2.2 AA)',
     privacyLink: 'Politique de confidentialité (Loi 25)',
     cookiesLink: 'Politique sur les témoins',
     termsLink: 'Conditions de service',
-    guidesLink: 'Guides & conseils (35+ ans)',
-    galleryLink: 'Réalisations & diplômes',
-    allZonesLink: '75 municipalités desservies',
-    dashboardLink: 'Espace Admin (/dashboard)',
     manageCookiesBtn: 'Gérer mes témoins',
-    copyright: '© {year} Raviva Nettoyage de Tapis Montréal — ravivanettoyagedetapis.com. Tous droits réservés.',
+    copyright: '© {year} Raviva Nettoyage de Tapis Montréal. Tous droits réservés.',
     hoursLabel: 'Heures d’ouverture',
     neqLabel: 'NEQ',
   },
   pages: {
     about: {
       title: 'À propos de Raviva & de Marc Lemonnier',
-      subtitle: 'Plus de 35 ans d’expérience personnelle terrain en nettoyage spécialisé, élimination des odeurs et restauration après dégât d’eau — exécution directe à 100 %.',
-      pillarsTitle: 'Notre approche technique RAVIVA 6X™',
-      commitmentsTitle: 'Nos engagements vérifiables (zéro sous-traitance)',
+      subtitle: '35 ans d’expérience en nettoyage spécialisé et restauration après sinistre au service des résidences et entreprises du Grand Montréal.',
+      pillarsTitle: 'Notre approche technique',
+      commitmentsTitle: 'Nos engagements vérifiables',
       commitments: [
-        'Exécution directe à 100 % par le propriétaire-opérateur Marc Lemonnier — aucune délégation ni réseau de tiers.',
-        'Pré-inspection gratuite sur place, soumission claire avant travaux et aucun frais caché pour bouger les meubles standards.',
-        'Double extraction haute puissance et produits biodégradables non toxiques sans danger pour enfants et animaux.',
-        'Accréditation IICRC, assurance responsabilité civile commerciale complète et garantie de satisfaction sur place.',
+        'Plus de 35 ans d’expérience pratique dirigée par Marc Lemonnier en nettoyage spécialisé et restauration après sinistre.',
+        'Équipement professionnel haute extraction limitant le temps de séchage entre 4 et 6 heures.',
+        'Produits biodégradables sans COV agressifs ni résidus collants.',
+        'Assurance responsabilité civile commerciale complète et soumission écrite claire avant chaque mandat.',
       ],
     },
     contact: {

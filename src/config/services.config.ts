@@ -6,12 +6,11 @@ export type ServiceId =
   | 'wall-to-wall-carpet'
   | 'area-rugs'
   | 'upholstery-sofas'
+  | 'mattress-sanitization'
+  | 'stain-removal'
   | 'pet-odor-urine'
   | 'antibacterial-treatment'
   | 'eco-stain-protector'
-  | 'water-damage-restoration'
-  | 'mattress-sanitization'
-  | 'stain-removal'
   | 'move-in-move-out'
   | 'commercial-carpets';
 
@@ -37,8 +36,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: true,
     image: SITE_CONFIG.images.hero,
     indicativePrice: {
-      fr: 'Pré-inspection gratuite · Sur évaluation',
-      en: 'Free pre-inspection · On-site quote',
+      fr: 'À partir de 149 $ (3 pièces)',
+      en: 'Starting at $149 (3 rooms)',
     },
   },
   {
@@ -49,8 +48,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: true,
     image: SITE_CONFIG.images.areaRug,
     indicativePrice: {
-      fr: 'Méthode adaptée à la fibre · Sur devis',
-      en: 'Fiber-matched method · By quote',
+      fr: 'À partir de 3,50 $ / pi²',
+      en: 'Starting at $3.50 / sq.ft.',
     },
   },
   {
@@ -61,8 +60,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: true,
     image: SITE_CONFIG.images.upholstery,
     indicativePrice: {
-      fr: 'Tissus délicats & cuir · Sur évaluation',
-      en: 'Delicate fabrics & leather · On-site quote',
+      fr: 'Divan 3 places dès 135 $',
+      en: '3-seat sofa from $135',
     },
   },
   {
@@ -73,20 +72,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: true,
     image: SITE_CONFIG.images.beforeAfter,
     indicativePrice: {
-      fr: 'Urine, fumée, moufette · Sur devis',
-      en: 'Pet urine, smoke, skunk · By quote',
-    },
-  },
-  {
-    id: 'water-damage-restoration',
-    slug: 'restauration-degat-eau',
-    enabled: true,
-    category: 'specialty',
-    featured: true,
-    image: SITE_CONFIG.images.waterDamage,
-    indicativePrice: {
-      fr: 'Extraction d’urgence & assèchement',
-      en: 'Emergency extraction & structural drying',
+      fr: 'Traitement enzymatique · Sur devis',
+      en: 'Enzymatic treatment · By quote',
     },
   },
   {
@@ -97,8 +84,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: true,
     image: SITE_CONFIG.images.antibacterial,
     indicativePrice: {
-      fr: 'Assainissement vapeur & agent doux',
-      en: 'Dry steam & eco sanitization',
+      fr: 'Assainissement vapeur & agent doux · Sur devis',
+      en: 'Steam & eco sanitizer · By quote',
     },
   },
   {
@@ -109,8 +96,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: true,
     image: SITE_CONFIG.images.protector,
     indicativePrice: {
-      fr: 'Protecteur au fluorine · En option',
-      en: 'Fluorine fiber protector · Optional add-on',
+      fr: 'En ajout au nettoyage · Sur devis',
+      en: 'Add-on protection · By quote',
     },
   },
   {
@@ -121,8 +108,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: false,
     image: SITE_CONFIG.images.hero,
     indicativePrice: {
-      fr: 'Vapeur sèche & extraction · Sur devis',
-      en: 'Dry steam & extraction · By quote',
+      fr: 'Matelas grand format dès 95 $',
+      en: 'Queen mattress from $95',
     },
   },
   {
@@ -133,8 +120,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: false,
     image: SITE_CONFIG.images.beforeAfter,
     indicativePrice: {
-      fr: 'Vin rouge, café, encre · Sur évaluation',
-      en: 'Red wine, coffee, ink · By assessment',
+      fr: 'Sur évaluation / dès 45 $',
+      en: 'By assessment / from $45',
     },
   },
   {
@@ -145,8 +132,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: false,
     image: SITE_CONFIG.images.hero,
     indicativePrice: {
-      fr: 'Logement & maison · Sur évaluation',
-      en: 'Home & apartment · On-site quote',
+      fr: 'Forfait logement sur soumission',
+      en: 'Move-in/out package by quote',
     },
   },
   {
@@ -157,8 +144,8 @@ export const SERVICES_CONFIG: ServiceDefinition[] = [
     featured: false,
     image: SITE_CONFIG.images.upholstery,
     indicativePrice: {
-      fr: 'Exécution directe soir & week-end',
-      en: 'Direct evening & weekend service',
+      fr: 'Contrat ou visite · Sur soumission',
+      en: 'Contract or one-time · By quote',
     },
   },
 ];

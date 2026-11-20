@@ -7,7 +7,6 @@ import { useRouter } from '../context/RouterContext';
 import { SeoHead } from '../components/seo/SeoHead';
 import { OptimizedImage } from '../components/common/OptimizedImage';
 import { FaqAccordion } from '../components/common/FaqAccordion';
-import { Raviva6XSection } from '../components/common/Raviva6XSection';
 
 interface ServiceDetailPageProps {
   service: ServiceDefinition;
@@ -200,8 +199,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
               </div>
             </aside>
           </div>
-
-          <Raviva6XSection compact />
         </div>
       </div>
     </>
