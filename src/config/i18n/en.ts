@@ -24,25 +24,80 @@ export const EN_DICTIONARY: TranslationDictionary = {
     about: 'About',
     services: 'Services',
     areas: 'Service Areas',
+    guides: 'Guides',
+    gallery: 'Portfolio',
     faq: 'FAQ',
     contact: 'Contact',
-    freeQuote: 'Free Quote',
+    freeQuote: 'Direct Quote',
     callNow: 'Call Now',
     textUs: 'Text Us',
-    viewAllServices: 'View all carpet & textile services',
-    viewAllAreas: 'View all covered municipalities',
+    viewAllServices: 'View all directly operated services',
+    viewAllAreas: 'View all 75 covered municipalities',
   },
   hero: {
-    primaryCta: 'Request a Free Quote',
+    primaryCta: 'Request a Free Pre-Inspection',
     callCta: 'Call 514-820-0368',
     smsCta: 'Text a Photo',
     reassuranceItems: [
-      'High-temperature low-moisture extraction',
-      'Biodegradable formulas safe for children and pets',
-      'Full commercial liability insurance',
+      '100% direct owner-operator execution (no subcontracting)',
+      'Zero hidden fees for moving standard furniture',
+      'Double extraction & satisfaction guarantee',
     ],
     imageAlt:
       'Sunlit Montreal living room featuring an immaculate freshly deep-cleaned cream carpet and linen sectional sofa',
+  },
+  raviva6x: {
+    kicker: 'Official Signature Method',
+    heading: 'Exclusive 6-Step RAVIVA 6X™ Protocol',
+    subheading:
+      'Every residential or commercial job is personally performed by owner-operator Marc Lemonnier using a methodology proven over 35+ years in the field.',
+    steps: [
+      {
+        letter: 'R',
+        title: 'Removal of dry soil',
+        description: 'Thorough deep vacuuming to lift dry grit, fine dust, and embedded debris prior to any moisture.',
+      },
+      {
+        letter: 'A',
+        title: 'Analysis & inspection',
+        description: 'Complete free pre-inspection and fiber/dye condition assessment across every room or piece.',
+      },
+      {
+        letter: 'V',
+        title: 'Vaporization & pre-treatment',
+        description: 'Targeted application of non-toxic biodegradable solutions matched to fiber and stain chemistry.',
+      },
+      {
+        letter: 'I',
+        title: 'Intensive mechanical agitation',
+        description: 'Deep fiber-safe agitation to break loose embedded soils, oils, and traffic-lane buildup.',
+      },
+      {
+        letter: 'V',
+        title: 'Vacuum extraction & flushing',
+        description: 'Powerful double-pass extraction with pH-neutral rinsing for rapid drying and zero soapy residue.',
+      },
+      {
+        letter: 'A',
+        title: 'Air drying & quality assurance',
+        description: 'Accelerated drying setup when needed and a final walkthrough sign-off to guarantee your satisfaction.',
+      },
+    ],
+  },
+  accreditationsSection: {
+    kicker: '35 Years of Expertise, Diplomas & Accreditations',
+    heading: 'An accredited master operator—zero subcontracting',
+    subheading:
+      'Over 35 years of personal hands-on experience in specialized cleaning, odor neutralization, and water damage restoration—never handed off to third-party networks.',
+    iicrcTitle: 'IICRC Accreditation & Technical Training',
+    iicrcDesc:
+      'Protocols aligned with IICRC industry standards covering fiber identification, colorfast spot removal, sanitization, and structural drying after water damage.',
+    directTitle: '100% Direct Owner-Operator Execution',
+    directDesc:
+      'The specialist who answers 514-820-0368 performs the free pre-inspection and personally executes every step of the work in your home or business.',
+    manageInAdminNote:
+      'Certificates, diplomas, and 35-year business longevity records are managed and displayed directly from the /dashboard media library.',
+    viewGalleryCta: 'View portfolio & diplomas',
   },
   standardsBand: {
     heading: 'Technical standards & service commitments',
@@ -79,46 +134,46 @@ export const EN_DICTIONARY: TranslationDictionary = {
   },
   services: {
     'wall-to-wall-carpet': {
-      title: 'Wall-to-Wall Carpet Cleaning',
+      title: 'Deep Carpet & Area Rug Cleaning',
       shortDesc:
-        'High-powered hot water extraction for bedrooms, basements, hallways, and carpeted stairs. Fast 4–6 hour drying.',
-      categoryLabel: 'Residential · Hot water extraction',
+        'All fiber-matched methods: hot water extraction with rotary shampoo, encapsulation, dry foam, bonnet, and dry powder + fluorine protector.',
+      categoryLabel: 'Residential & Commercial · RAVIVA 6X™ Protocol',
       fullDesc:
-        'Our 5-step deep extraction lifts abrasive grit from the base of the pile, neutralizes winter salt residue, and restores high-traffic hallways without over-wetting the backing or pad.',
+        'Based on fiber construction and traffic condition, I personally select the safest technique: hot water extraction with rotary shampoo and double-pass recovery, fast-dry encapsulation, dry foam, bonnet, or dry powder. Includes free pre-inspection, zero hidden fee for moving standard furniture, and optional fluorine fiber protection.',
       processPoints: [
-        'Fiber identification (nylon, polyester, olefin, wool) and traffic-lane inspection',
-        'Targeted plant-based or enzymatic pre-conditioning on walkways and stairs',
-        'Gentle mechanical agitation followed by high-recovery hot water extraction',
-        'pH-balancing rinse and pile grooming for uniform drying',
+        'Free pre-inspection: fiber test and method selection (extraction, rotary shampoo, encapsulation, dry foam, bonnet, or dry powder)',
+        'Complimentary moving of standard light furniture (chairs, side tables) before dry vacuuming',
+        'Non-toxic biodegradable pre-treatment and deep mechanical agitation',
+        'Double-pass high-recovery extraction and optional fluorine stain protector application',
       ],
       idealFor: [
-        'Bedrooms, living rooms, and finished basements',
-        'Carpeted staircases and upper landings',
-        'Family homes with toddlers or indoor pets',
+        'Residential wall-to-wall carpets (bedrooms, living rooms, basements, stairs)',
+        'Commercial office carpets requiring minimal drying downtime',
+        'Households seeking zero detergent residue and non-toxic care',
       ],
       faqSpecific: [
         {
-          q: 'How long does it take for carpets to dry?',
-          a: 'Typically 4 to 6 hours thanks to high-recovery vacuum extraction and controlled moisture output.',
+          q: 'Which carpet cleaning methods do you offer?',
+          a: 'Every method matched to the fiber: hot water extraction with rotary shampoo, encapsulation, dry foam, bonnet, or dry powder.',
         },
         {
-          q: 'Do I need to move all furniture beforehand?',
-          a: 'We move small lightweight items (chairs, side tables) at no charge. Beds, bookcases, and heavy pieces remain in place and we clean thoroughly around them.',
+          q: 'Are there extra charges for moving standard furniture?',
+          a: 'No. Moving standard lightweight items like chairs and small tables is included at no hidden cost.',
         },
       ],
     },
     'area-rugs': {
       title: 'Area Rugs & Fine Rug Cleaning',
       shortDesc:
-        'Custom care for wool, silk, viscose, and Persian or Oriental rugs. Dye-fastness testing and pH-balanced solutions.',
+        'Custom care for wool, silk, viscose, and Persian or Oriental rugs. Dye-fastness testing, dry foam, dry powder, or pH-balanced wash.',
       categoryLabel: 'Delicate fibers · Specialty care',
       fullDesc:
-        'Hand-knotted Oriental rugs, New Zealand wool weaves, and viscose blends require controlled chemistry and gentle moisture management to prevent dye bleed or fiber distortion.',
+        'Hand-knotted Oriental rugs, New Zealand wool weaves, and viscose blends require controlled chemistry and gentle moisture management (dry foam, dry powder, or controlled extraction) to prevent dye bleed.',
       processPoints: [
-        'Mandatory dye-fastness test prior to any moisture application',
+        'Mandatory dye-fastness testing during the free pre-inspection',
         'Deep dry dusting to remove trapped grit inside the weave',
-        'Wool-safe, pH-neutral wash formulated for natural dyes',
-        'Controlled flat drying and fringe grooming',
+        'Wool-safe, pH-neutral wash, dry foam, or dry powder matched to natural dyes',
+        'Ventilated drying and fringe grooming',
       ],
       idealFor: [
         'Persian, Oriental, and hand-knotted kilim rugs',
@@ -127,33 +182,33 @@ export const EN_DICTIONARY: TranslationDictionary = {
       ],
       faqSpecific: [
         {
-          q: 'Can area rugs be cleaned on site?',
-          a: 'Yes, most rugs are cleaned safely on site over protective floor barriers; heavily saturated pieces are assessed directly with Marc Lemonnier.',
+          q: 'Can area rugs be cleaned directly on site?',
+          a: 'Yes, I personally assess every rug during the free pre-inspection and apply the safest method over protective floor barriers.',
         },
       ],
     },
     'upholstery-sofas': {
-      title: 'Upholstery & Sofa Cleaning',
+      title: 'Upholstery, Sofas & Leather Cleaning',
       shortDesc:
-        'Sofas, sectionals, armchairs, and dining chairs (W, S, WS fabrics and leather). Removes body oils and everyday rings.',
-      categoryLabel: 'Residential · Fabric & leather',
+        'Hot water extraction, wet shampoo, natural sea-sponge dry foam, combined Dry-Wet-Dry method, and genuine leather cleaning & conditioning.',
+      categoryLabel: 'Residential & Commercial · Fabric & leather',
       fullDesc:
-        'Armrests and headrests absorb body oils, fine dust, and allergens. Our low-penetration upholstery tools refresh fabric fibers cleanly without soaking the inner cushion foam.',
+        'From everyday family sectionals to delicate upholstery and genuine leather, each piece receives the exact method required: hot water extraction, wet shampoo, dry foam applied with a natural sea sponge, combined Dry-Wet-Dry cleaning, or leather cleaning and nourishing hydration.',
       processPoints: [
-        'Manufacturer cleaning code check (W, S, WS, or X) and hidden-spot test',
-        'Detailed crevice and cushion seam vacuuming',
-        'Gentle emulsifying pre-spray on high-contact areas',
-        'Low-moisture extraction and accelerated cushion drying',
+        'Manufacturer code check (W, S, WS, X, or leather) during free pre-inspection',
+        'Tailored method: hot water extraction, wet shampoo, natural sea-sponge dry foam, or Dry-Wet-Dry',
+        'Gentle deep cleaning and protective hydration for genuine leather sofas and chairs',
+        'Controlled double extraction and detailed seam, piping, and cushion finishing',
       ],
       idealFor: [
-        '3-seat sofas, loveseats, and L-shaped sectionals',
-        'Upholstered dining chairs and bar stools',
-        'Microfiber, linen-blend, velvet, and leather seating',
+        'Sofas, sectionals, loveseats, armchairs, and dining chairs',
+        'Delicate linen, velvet, silk, or code-S upholstery via natural sea-sponge dry foam or Dry-Wet-Dry',
+        'Genuine leather couches requiring cleaning and conditioning hydration',
       ],
       faqSpecific: [
         {
-          q: 'Can you clean a sofa labeled with code “S” (solvent only)?',
-          a: 'Yes. We match our low-moisture or solvent-safe method strictly to your furniture manufacturer code.',
+          q: 'What are natural sea-sponge dry foam and Dry-Wet-Dry methods?',
+          a: 'They strictly control moisture on delicate or solvent-code fabrics so upholstery is deeply refreshed without over-wetting cushion foam.',
         },
       ],
     },
@@ -208,27 +263,52 @@ export const EN_DICTIONARY: TranslationDictionary = {
       ],
     },
     'pet-odor-urine': {
-      title: 'Odor Removal (Pets, Urine & Mustiness)',
+      title: 'Specialized Odor Removal (All Types)',
       shortDesc:
-        'Deep bio-enzymatic and molecular neutralization for pet urine, damp basement smells, smoke, and trapped household odors.',
-      categoryLabel: 'Specialty · Odor neutralization',
+        'Targeted molecular and bio-enzymatic treatment for pet urine, smoke, dampness, skunk spray, and disaster-related odors.',
+      categoryLabel: 'Specialty · Molecular odor removal',
       fullDesc:
-        'Stubborn odors seep beneath carpet backing and into upholstery cushions, reactivating whenever indoor humidity rises. Using proven disaster-restoration protocols, we break down odor molecules at the source rather than masking them with fragrance.',
+        'Whether dealing with pet urine, cigarette or fire smoke, skunk spray, basement mustiness, or water-damage odors, smells penetrate carpet backing and cushion cores. I personally neutralize odor-causing molecules at the source instead of covering them with perfume.',
       processPoints: [
-        'Accurate mapping of affected areas via light and odor inspection',
-        'Controlled bio-enzymatic saturation to digest uric acid crystals',
-        'Deep subsurface extraction from carpet backing, pad, or upholstery',
-        'Targeted secondary neutralization (hydroxyl/unoccupied ozone if needed)',
+        'Accurate mapping of odor sources via light and moisture inspection',
+        'Bio-enzymatic & molecular neutralization matched to the odor (urine, smoke, skunk, mustiness)',
+        'Deep double extraction reaching carpet backing, pad, or upholstery cores',
+        'Final verification with zero heavy masking fragrances',
       ],
       idealFor: [
         'Recent or set-in dog and cat urine accidents',
-        'Musty basements, smoke, or lingering cooking odors in textiles',
-        'Preparing a residence for possession or real estate listing',
+        'Skunk spray, smoke, basement dampness, or post-incident odors',
+        'Carpets, sofas, and mattresses across homes or businesses',
       ],
       faqSpecific: [
         {
-          q: 'Will the odor come back on humid days?',
-          a: 'No. Unlike surface sprays, enzymatic treatment breaks down uric acid crystals and organic compounds so odors do not return during humid weather.',
+          q: 'Do you also eliminate skunk and smoke odors?',
+          a: 'Yes. Drawing on 35+ years in disaster restoration, I treat pet urine, smoke, dampness, and skunk odors on carpets and upholstery.',
+        },
+      ],
+    },
+    'water-damage-restoration': {
+      title: 'Water Damage Extraction & Restoration',
+      shortDesc:
+        'Emergency water extraction, commercial dehumidifiers, and high-velocity drying fans to save carpets and prevent mold.',
+      categoryLabel: 'Emergency & Restoration · Structural drying',
+      fullDesc:
+        'During a basement leak, minor backup, or burst pipe, rapid action is essential to save carpeting and prevent microbial growth. I respond directly with commercial high-capacity water extraction, refrigerant dehumidifiers, and professional air movers.',
+      processPoints: [
+        'Moisture reading inspection across carpet, underpad, and adjacent baseboards',
+        'High-capacity emergency water extraction',
+        'Deployment of commercial dehumidifiers and professional air-mover fans',
+        'Antibacterial treatment, deodorization, and full RAVIVA 6X™ restoration once dry',
+      ],
+      idealFor: [
+        'Residential basements after water intrusion or water-heater leaks',
+        'Commercial offices affected by plumbing overflows',
+        'Preventing water rings, musty odors, and mold growth',
+      ],
+      faqSpecific: [
+        {
+          q: 'Do you handle both extraction and commercial drying equipment directly?',
+          a: 'Yes. I perform the extraction personally and deploy my own professional dehumidifiers and air movers with zero subcontracting.',
         },
       ],
     },
@@ -290,7 +370,7 @@ export const EN_DICTIONARY: TranslationDictionary = {
       fullDesc:
         'Clean commercial carpets extend flooring lifespan and support healthier indoor air. We schedule work outside business hours so your staff and clients experience zero disruption.',
       processPoints: [
-        'Deep extraction or fast-dry encapsulation (1–2 hour dry time)',
+        'Hot water extraction or fast-drying encapsulation',
         'Focused care for lobbies, elevator corridors, and boardrooms',
         'After-hours, early morning, or Saturday scheduling',
         'Annual or semi-annual maintenance plans with commercial invoicing',
@@ -308,27 +388,27 @@ export const EN_DICTIONARY: TranslationDictionary = {
       ],
     },
     'eco-stain-protector': {
-      title: 'Eco-Friendly Stain Protector',
+      title: 'Fluorine & Eco Stain Protector',
       shortDesc:
-        'Protective barrier applied after cleaning to slow liquid absorption, guard against wear, and make future spot care easier.',
-      categoryLabel: 'Protection · Fiber longevity',
+        'High-performance fluorine fiber protector applied after cleaning to slow liquid absorption, guard against wear, and simplify future spot care.',
+      categoryLabel: 'Protection · Fluorine fiber shield',
       fullDesc:
-        'Freshly rinsed carpet and sofa fibers readily accept an invisible protective shield. Our modern PFAS-free eco protector buys valuable time to blot spills before they set.',
+        'Freshly rinsed, pH-neutral carpet and sofa fibers readily accept an invisible protective shield. Our fluorine fiber protector creates surface tension that beads spills and reduces abrasive grit adhesion in high-traffic areas.',
       processPoints: [
-        'Even application immediately following deep extraction',
-        'Beading action slows coffee, juice, or wine penetration',
-        'Reduces dry soil adhesion in high-traffic lanes',
+        'Even application immediately following double-pass extraction on clean fibers',
+        'Fluorine barrier slows coffee, red wine, and juice penetration',
+        'Protects hallways and stairs against premature traffic wear',
         'Odor-free once dry',
       ],
       idealFor: [
-        'Newly cleaned light-colored sofas and family sectionals',
-        'Dining room carpets, hallways, and staircases',
-        'Wool area rugs after professional washing',
+        'High-traffic residential and commercial carpets',
+        'Light-colored sofas, sectionals, and dining chairs',
+        'Freshly cleaned wool area rugs',
       ],
       faqSpecific: [
         {
-          q: 'How long does the protector last?',
-          a: 'Depending on foot traffic, protection remains active for 12 to 18 months or until the next deep cleaning.',
+          q: 'Why apply a fluorine protector after deep cleaning?',
+          a: 'It wraps fibers in an invisible barrier that buys time to blot spills before they set and keeps dry soil from grinding into the pile.',
         },
       ],
     },
@@ -341,9 +421,9 @@ export const EN_DICTIONARY: TranslationDictionary = {
     pillars: [
       {
         number: '01.',
-        title: 'Controlled moisture & fast drying (4–6 hours)',
+        title: 'Systematic second extraction pass',
         description:
-          'High-recovery wands extract up to 95% of applied water. Your carpets dry quickly without over-wetting the backing or risking musty odors.',
+          'We systematically perform a second extraction pass to recover maximum moisture and leave your carpets as dry as possible.',
       },
       {
         number: '02.',
@@ -397,26 +477,24 @@ export const EN_DICTIONARY: TranslationDictionary = {
     ],
   },
   proofSection: {
-    kicker: 'Verifiable standards & reviews',
-    heading: '35 years of trade discipline applied to every textile',
-    configurableNotice:
-      'Transparency notice: The review cards below are clearly marked slots ready for your verified Google customer reviews (no fabricated testimonials are displayed).',
+    kicker: 'Verifiable standards',
+    heading: 'Over 35 years of trade discipline applied to every textile',
   },
   founderSection: {
-    kicker: 'Meet the founder',
+    kicker: 'About the owner-operator',
     ctaButton: 'Speak with Marc Lemonnier',
     portraitAlt:
-      'Portrait of Marc Lemonnier, founder of Raviva Nettoyage de Tapis Montréal, standing in a sunlit Montreal home hallway',
+      'Official IICRC registration certificate for Marc Lemonnier — Raviva Nettoyage de Tapis Montréal',
   },
   beforeAfterSection: {
     kicker: 'Real fiber restoration',
-    heading: 'Before & after specialized treatment',
+    heading: 'Real before & after field projects',
     subheading:
-      'Representative restoration outcomes across traffic lanes, coffee spills, family sectionals, and wool rugs.',
+      'Actual photographs from residential carpet cleaning, commercial offices, and stubborn spot removal jobs.',
     beforeLabel: 'Before',
     afterLabel: 'After',
     mainImageAlt:
-      'Before and after split comparison on a beige residential carpet: left side shows dark traffic soil and coffee stain, right side shows spotless restored fibers',
+      'Red wine stain on beige residential carpet before and after professional removal by Raviva',
     cases: [
       {
         title: 'Living room traffic lane & set coffee spill',
@@ -474,8 +552,8 @@ export const EN_DICTIONARY: TranslationDictionary = {
         a: 'Yes. We use biodegradable plant-based formulas with no harsh VOCs, rinsed with pH-neutral water so zero sticky or irritating detergent remains in the fibers.',
       },
       {
-        q: 'How long do carpets and sofas take to dry?',
-        a: 'Most wall-to-wall carpets dry in 4 to 6 hours and upholstered sofas in 3 to 5 hours. Moderate airflow or ceiling fans speed drying even further.',
+        q: 'How do you ensure my carpets and furniture dry properly?',
+        a: 'We perform a systematic second extraction pass to leave your carpet as dry as possible. When needed, we can also provide air movers and dehumidifiers (for a small additional fee) to accelerate drying.',
       },
       {
         q: 'Will spots reappear a few days after cleaning?',
@@ -532,22 +610,50 @@ export const EN_DICTIONARY: TranslationDictionary = {
     submitting: 'Submitting…',
     successTitle: 'Quote Request Received',
     successBody:
-      'Thank you! We have received your project details. Marc Lemonnier or a Raviva specialist will contact you shortly via your preferred phone or email. For urgent requests, call 514-820-0368.',
+      'Thank you! Your request has been sent directly to owner-operator Marc Lemonnier (never shared with third parties). I will contact you shortly to arrange your free pre-inspection or appointment. Water damage emergencies: 514-820-0368.',
     newRequestBtn: 'Submit another request',
     steps: {
-      s1Title: '1. Which services do you need?',
-      s1Subtitle: 'Select one or more carpet and textile services.',
+      s1Title: '1. Sector & primary need',
+      s1Subtitle: 'Choose Residential or Commercial and select the services performed directly by Raviva.',
       s2Title: '2. What type of property is this?',
-      s2Subtitle: 'Helps us plan parking, access, and the right equipment.',
+      s2Subtitle: 'Helps me plan parking, access, and the right equipment.',
       s3Title: '3. Specific needs & fiber details',
-      s3Subtitle: 'Let us know about stairs, wool rugs, stains, or pet odors.',
+      s3Subtitle: 'Let me know about stairs, wool rugs, stains, odors, leather, or water damage.',
       s4Title: '4. Approximate quantities or dimensions',
-      s4Subtitle: 'Rough estimates are completely fine to prepare your quote.',
+      s4Subtitle: 'Rough estimates are completely fine before the free on-site pre-inspection.',
       s5Title: '5. Preferred timeframe',
       s5Subtitle: 'Pick the scheduling window that works best for you.',
-      s6Title: '6. Contact details & photos (optional)',
-      s6Subtitle: 'Under Quebec Law 25, your details are used strictly to process your quote.',
+      s6Title: '6. Direct contact details & photos (optional)',
+      s6Subtitle: 'Direct owner-operator form with zero third-party lead transfer. Used strictly for your request (Law 25).',
     },
+    sectors: [
+      { id: 'residential', label: 'Residential (home, condo, apartment)' },
+      { id: 'commercial', label: 'Commercial (office, storefront, building)' },
+    ],
+    sectorLabel: 'Sector',
+    needCategories: [
+      {
+        id: 'tapis',
+        label: 'Carpets & Area Rugs',
+        serviceIds: ['wall-to-wall-carpet', 'area-rugs', 'eco-stain-protector'],
+      },
+      {
+        id: 'meubles',
+        label: 'Upholstery & Leather',
+        serviceIds: ['upholstery-sofas', 'mattress-sanitization'],
+      },
+      {
+        id: 'odeurs',
+        label: 'Odors (pets, smoke, skunk)',
+        serviceIds: ['pet-odor-urine', 'antibacterial-treatment'],
+      },
+      {
+        id: 'degat-eau',
+        label: 'Water Damage & Drying',
+        serviceIds: ['water-damage-restoration'],
+      },
+    ],
+    needCategoryLabel: 'Primary need',
     propertyTypes: [
       { id: 'house', label: 'Detached or semi-detached house' },
       { id: 'condo', label: 'Condo (elevator or multi-storey access)' },
@@ -557,15 +663,16 @@ export const EN_DICTIONARY: TranslationDictionary = {
       { id: 'building', label: 'Multi-unit building (common areas)' },
     ],
     specificNeeds: [
-      { id: 'wall-carpet', label: 'Wall-to-wall carpet (bedrooms / basement)' },
+      { id: 'wall-carpet', label: 'Wall-to-wall carpet (extraction, rotary shampoo, encapsulation, dry foam/powder)' },
       { id: 'stairs', label: 'Carpeted staircases' },
       { id: 'wool-rug', label: 'Wool, silk, or Oriental area rug' },
-      { id: 'stains', label: 'Stubborn stains (coffee, wine, grease, traffic)' },
-      { id: 'pet-odor', label: 'Odor removal (pets, urine, mustiness)' },
+      { id: 'stains', label: 'Stubborn stains (red wine, coffee, grease, traffic)' },
+      { id: 'pet-odor', label: 'Odor removal (pet urine, smoke, dampness, skunk)' },
+      { id: 'water-damage', label: 'Water damage (emergency extraction, dehumidifiers & fans)' },
       { id: 'antibacterial', label: 'Antibacterial & sanitization treatment' },
-      { id: 'sofa', label: 'Upholstered furniture (sofa, sectional, armchair)' },
+      { id: 'sofa', label: 'Upholstery or leather (natural sea-sponge dry foam, Dry-Wet-Dry, leather conditioning)' },
       { id: 'mattress', label: 'Mattress sanitization' },
-      { id: 'protector', label: 'Add eco-friendly stain protector' },
+      { id: 'protector', label: 'Add fluorine stain protector' },
     ],
     quantities: {
       roomsLabel: 'Number of carpeted rooms',
@@ -634,30 +741,34 @@ export const EN_DICTIONARY: TranslationDictionary = {
   },
   footer: {
     tagline:
-      'Dedicated to eco-friendly carpet, area rug, upholstery, and mattress cleaning across Greater Montreal. Backed by 35 years of specialized trade experience.',
-    servicesHeading: 'Specialized Services',
-    areasHeading: 'Service Areas',
-    legalHeading: 'Compliance & Legal',
+      'Independent business directly operated by Marc Lemonnier (35+ years experience): carpets, upholstery, leather, odors, and water damage restoration across Greater Montreal.',
+    servicesHeading: 'Directly Operated Services',
+    areasHeading: 'Areas & Resources',
+    legalHeading: 'Compliance & Admin',
     accessibilityLink: 'Accessibility (WCAG 2.2 AA)',
     privacyLink: 'Privacy Policy (Law 25)',
     cookiesLink: 'Cookie Policy',
     termsLink: 'Terms of Service',
+    guidesLink: 'Guides & Advice (35+ yrs)',
+    galleryLink: 'Portfolio & Diplomas',
+    allZonesLink: '75 Municipalities Served',
+    dashboardLink: 'Admin Dashboard (/dashboard)',
     manageCookiesBtn: 'Manage Cookies',
-    copyright: '© {year} Raviva Nettoyage de Tapis Montréal. All rights reserved.',
+    copyright: '© {year} Raviva Nettoyage de Tapis Montréal — ravivanettoyagedetapis.com. All rights reserved.',
     hoursLabel: 'Business Hours',
     neqLabel: 'NEQ',
   },
   pages: {
     about: {
       title: 'About Raviva & Marc Lemonnier',
-      subtitle: '35 years of specialized cleaning and disaster restoration experience serving Greater Montreal homes and businesses.',
-      pillarsTitle: 'Our technical approach',
-      commitmentsTitle: 'Verifiable commitments',
+      subtitle: '35+ years of personal hands-on experience in specialized cleaning, odor neutralization, and water damage restoration — 100% direct execution.',
+      pillarsTitle: 'Our RAVIVA 6X™ Technical Approach',
+      commitmentsTitle: 'Verifiable Commitments (Zero Subcontracting)',
       commitments: [
-        '35 years of hands-on experience led by Marc Lemonnier in specialized cleaning and disaster restoration.',
-        'High-recovery extraction equipment designed for 4 to 6 hour average drying.',
-        'Biodegradable, VOC-free cleaning agents leaving zero sticky soap residue.',
-        'Full commercial liability coverage and clear upfront pricing before work begins.',
+        '100% direct execution by owner-operator Marc Lemonnier — never delegated or subcontracted.',
+        'Free on-site pre-inspection, clear quote before work, and zero hidden fee for moving standard furniture.',
+        'Double-pass high-recovery extraction and non-toxic biodegradable formulas safe for children and pets.',
+        'IICRC accreditation, full commercial liability insurance, and on-site satisfaction guarantee.',
       ],
     },
     contact: {

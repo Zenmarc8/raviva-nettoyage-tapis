@@ -32,6 +32,8 @@ export interface TranslationDictionary {
     about: string;
     services: string;
     areas: string;
+    guides: string;
+    gallery: string;
     faq: string;
     contact: string;
     freeQuote: string;
@@ -46,6 +48,27 @@ export interface TranslationDictionary {
     smsCta: string;
     reassuranceItems: string[];
     imageAlt: string;
+  };
+  raviva6x: {
+    kicker: string;
+    heading: string;
+    subheading: string;
+    steps: Array<{
+      letter: string;
+      title: string;
+      description: string;
+    }>;
+  };
+  accreditationsSection: {
+    kicker: string;
+    heading: string;
+    subheading: string;
+    iicrcTitle: string;
+    iicrcDesc: string;
+    directTitle: string;
+    directDesc: string;
+    manageInAdminNote: string;
+    viewGalleryCta: string;
   };
   standardsBand: {
     heading: string;
@@ -86,7 +109,6 @@ export interface TranslationDictionary {
   proofSection: {
     kicker: string;
     heading: string;
-    configurableNotice: string;
   };
   founderSection: {
     kicker: string;
@@ -169,6 +191,10 @@ export interface TranslationDictionary {
       s6Title: string;
       s6Subtitle: string;
     };
+    sectors: Array<{ id: 'residential' | 'commercial'; label: string }>;
+    sectorLabel: string;
+    needCategories: Array<{ id: string; label: string; serviceIds: string[] }>;
+    needCategoryLabel: string;
     propertyTypes: Array<{ id: string; label: string }>;
     specificNeeds: Array<{ id: string; label: string }>;
     quantities: {
@@ -235,6 +261,10 @@ export interface TranslationDictionary {
     privacyLink: string;
     cookiesLink: string;
     termsLink: string;
+    guidesLink: string;
+    galleryLink: string;
+    allZonesLink: string;
+    dashboardLink: string;
     manageCookiesBtn: string;
     copyright: string;
     hoursLabel: string;
