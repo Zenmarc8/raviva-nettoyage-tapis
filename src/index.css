@@ -1,6 +1,6 @@
 @import "tailwindcss";
 html {
-  font-size: 200%; /* Double la taille de tous les textes (équivalent 2em global) */
+  font-size: 10%; /* Double la taille de tous les textes (équivalent 2em global) */
 }
 :root {
   --brand-primary: #0b3d2e;
