@@ -1,20 +1,26 @@
 import React from 'react';
-import { Phone, ShieldCheck } from 'lucide-react';
+import { Check, Phone, ShieldCheck } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.config';
 import { CUSTOM_CONTENT } from '../config/custom-content.config';
 import { useTranslation } from '../context/LanguageContext';
 import { useRouter } from '../context/RouterContext';
+import { useCms } from '../context/CmsContext';
 import { SeoHead } from '../components/seo/SeoHead';
 import { HeroSection } from '../components/home/HeroSection';
 import { ServicesGridSection } from '../components/home/ServicesGridSection';
 import { ServiceAreasSection } from '../components/home/ServiceAreasSection';
-import { OptimizedImage } from '../components/common/OptimizedImage';
 import { FaqAccordion } from '../components/common/FaqAccordion';
+import { Raviva6XSection } from '../components/common/Raviva6XSection';
+import { AccreditationsSection } from '../components/common/AccreditationsSection';
+import { SeoImage } from '../components/common/SeoImage';
 
 export const HomePage: React.FC = () => {
   const { locale, t } = useTranslation();
   const { openQuoteModal, navigate } = useRouter();
+  const { exactContent, beforeAfterItems } = useCms();
   const founderCopy = CUSTOM_CONTENT.founderStoryOverrides[locale];
+  const featuredWork = beforeAfterItems[0];
+  const previewCases = beforeAfterItems.slice(0, 3);
 
   return (
     <>
@@ -47,16 +53,19 @@ export const HomePage: React.FC = () => {
       {/* 3. Specialized Carpet & Textile Services Grid */}
       <ServicesGridSection />
 
-      {/* 4. Why Eco / Why Choose Raviva */}
+      {/* 3B. Official Signature Method — RAVIVA 6X™ */}
+      <Raviva6XSection />
+
+      {/* 4. Specialties & Exact Available Methods */}
       <section
-        aria-labelledby="why-eco-heading"
+        aria-labelledby="specialties-exact-heading"
         className="border-t border-slate-200 bg-[#f4f7f5] py-16 sm:py-24"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="text-sm font-semibold text-[#146c43]">{t.whyEco.kicker}</p>
             <h2
-              id="why-eco-heading"
+              id="specialties-exact-heading"
               className="mt-2 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl [text-wrap:balance]"
             >
               {t.whyEco.heading}
@@ -65,19 +74,19 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {t.whyEco.pillars.map((pillar) => (
+            {exactContent.specialtiesSummary.map((spec, idx) => (
               <div
-                key={pillar.number}
+                key={spec.id}
                 className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8"
               >
                 <div className="font-display text-sm font-bold text-[#146c43] tabular-nums">
-                  {pillar.number}
+                  0{idx + 1}.
                 </div>
                 <h3 className="mt-2 font-display text-xl font-bold text-slate-900">
-                  {pillar.title}
+                  {spec.title[locale]}
                 </h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
-                  {pillar.description}
+                  {spec.description[locale]}
                 </p>
               </div>
             ))}
@@ -116,73 +125,69 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Verifiable Metrics & Configurable Reviews */}
+      {/* 6. Ce à quoi vous devez vous attendre (12 Engagements exacts — zéro invention) */}
       <section
-        aria-labelledby="proof-heading"
+        aria-labelledby="expectations-heading"
         className="border-t border-slate-200 bg-[#f4f7f5] py-16 sm:py-24"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold text-[#146c43]">{t.proofSection.kicker}</p>
-            <h2
-              id="proof-heading"
-              className="mt-2 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl [text-wrap:balance]"
-            >
-              {t.proofSection.heading}
-            </h2>
-          </div>
-
-          {/* 4 Verifiable Key Figures */}
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {CUSTOM_CONTENT.verifiableMetrics.map((m) => (
-              <div key={m.value} className="rounded-xl border border-slate-200 bg-white p-6">
-                <div className="font-display text-3xl font-extrabold text-[#0b3d2e] tabular-nums">
-                  {m.value}
-                </div>
-                <div className="mt-1 text-sm font-bold text-slate-900">{m.label[locale]}</div>
-                <p className="mt-1.5 text-xs leading-relaxed text-slate-600">{m.detail[locale]}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Configurable Review Slots (Transparently marked, no fake testimonials) */}
-          <p className="mt-10 text-xs font-medium text-slate-600">
-            {t.proofSection.configurableNotice}
-          </p>
-
-          <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {CUSTOM_CONTENT.configurableReviews.map((rev) => (
-              <blockquote
-                key={rev.id}
-                className="flex flex-col justify-between rounded-xl border border-dashed border-slate-300 bg-white p-6"
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold text-[#146c43]">
+                {exactContent.operator.mainGuarantee[locale]}
+              </p>
+              <h2
+                id="expectations-heading"
+                className="mt-2 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl [text-wrap:balance]"
               >
-                <p className="text-sm leading-relaxed text-slate-700">{rev.quote[locale]}</p>
-                <footer className="mt-5 border-t border-slate-100 pt-4 text-xs">
-                  <div className="font-bold text-slate-900">{rev.author}</div>
-                  <div className="mt-0.5 text-slate-600">
-                    {rev.neighborhood} · {rev.serviceLabel[locale]}
-                  </div>
-                </footer>
-              </blockquote>
-            ))}
+                {exactContent.expectationsTitle[locale]}
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">
+                {exactContent.expectationsSubtitle[locale]}
+              </p>
+            </div>
+            <a
+              href={exactContent.operator.phoneHref}
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-[#0b3d2e] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#082d22] whitespace-nowrap shrink-0"
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              <span className="tabular-nums">{exactContent.operator.phoneDisplay}</span>
+            </a>
           </div>
+
+          <ul className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {exactContent.expectations.map((item, idx) => (
+              <li
+                key={item.id}
+                className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-5"
+              >
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#0b3d2e] text-white">
+                  <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                </span>
+                <div>
+                  <span className="sr-only">#{idx + 1}: </span>
+                  <p className="text-sm leading-relaxed text-slate-800">{item[locale]}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* 7. Meet the Founder — Marc Lemonnier */}
+      {/* 7. Operator Profile & Authentic IICRC Accreditation (no fake portrait photo) */}
       <section aria-labelledby="founder-heading" className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <div className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-                <OptimizedImage
-                  src={SITE_CONFIG.images.founder}
-                  alt={t.founderSection.portraitAlt}
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[#f4f7f5] p-4">
+                <SeoImage
+                  src={SITE_CONFIG.images.iicrcCert}
+                  alt={exactContent.diplomasGallery[0]?.alt[locale] ?? 'Certificat IICRC Marc Lemonnier'}
+                  caption={exactContent.diplomasGallery[0]?.caption[locale]}
                   aspectRatio="3/4"
                   width={900}
                   height={1200}
-                  className="h-full w-full"
-                  imgClassName="lg:h-full lg:w-full object-cover object-top"
+                  imgClassName="object-contain bg-white"
                 />
               </div>
             </div>
@@ -202,13 +207,13 @@ export const HomePage: React.FC = () => {
                 {founderCopy.bodyParagraph}
               </p>
 
-              {/* Satisfaction Guarantee Box (All-around hairline border, no thick left stripe) */}
+              {/* Satisfaction Guarantee Box */}
               <div className="mt-7 rounded-xl border border-slate-200 bg-[#f4f7f5] p-5">
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#0b3d2e]" aria-hidden="true" />
                   <div>
                     <h3 className="font-display text-base font-bold text-slate-900">
-                      {founderCopy.guaranteeTitle}
+                      {exactContent.operator.mainGuarantee[locale]}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-slate-700">
                       {founderCopy.guaranteeText}
@@ -241,7 +246,10 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. Before / After Gallery */}
+      {/* 7B. Diplômes & Accréditations IICRC */}
+      <AccreditationsSection />
+
+      {/* 8. Real Work Gallery Preview (/realisations) */}
       <section
         aria-labelledby="before-after-heading"
         className="border-t border-slate-200 bg-white py-16 sm:py-24"
@@ -249,21 +257,21 @@ export const HomePage: React.FC = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <div className="overflow-hidden rounded-2xl border border-slate-200">
-                <OptimizedImage
-                  src={SITE_CONFIG.images.beforeAfter}
-                  alt={t.beforeAfterSection.mainImageAlt}
-                  aspectRatio="4/3"
-                  width={1200}
-                  height={900}
-                />
-                <div className="grid grid-cols-2 border-t border-slate-200 bg-slate-50 text-center text-xs font-bold text-slate-800">
-                  <div className="border-r border-slate-200 py-2.5">
-                    {t.beforeAfterSection.beforeLabel}
+              {featuredWork && (
+                <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                  <SeoImage
+                    src={featuredWork.src}
+                    alt={featuredWork.alt[locale]}
+                    caption={featuredWork.caption[locale]}
+                    aspectRatio="4/3"
+                    width={1200}
+                    height={900}
+                  />
+                  <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-xs font-bold text-slate-800">
+                    {featuredWork.title[locale]}
                   </div>
-                  <div className="py-2.5 text-[#0b3d2e]">{t.beforeAfterSection.afterLabel}</div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className="flex flex-col justify-center lg:col-span-6">
@@ -279,15 +287,37 @@ export const HomePage: React.FC = () => {
               <p className="mt-3 text-base text-slate-600">{t.beforeAfterSection.subheading}</p>
 
               <div className="mt-7 space-y-4">
-                {t.beforeAfterSection.cases.map((c) => (
-                  <div key={c.title} className="rounded-xl border border-slate-200 bg-[#f4f7f5]/50 p-4">
-                    <h3 className="font-display text-base font-bold text-slate-900">{c.title}</h3>
-                    <p className="mt-1 text-xs font-medium text-slate-600">
-                      {c.surface} · {c.treatment}
-                    </p>
-                    <p className="mt-1.5 text-sm text-slate-800">{c.result}</p>
+                {previewCases.map((c) => (
+                  <div key={c.id} className="rounded-xl border border-slate-200 bg-[#f4f7f5]/50 p-4">
+                    <h3 className="font-display text-base font-bold text-slate-900">
+                      {c.title[locale]}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-slate-700">{c.caption[locale]}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/realisations"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/realisations');
+                  }}
+                  className="inline-flex min-h-[44px] items-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+                >
+                  {t.nav.gallery} ({beforeAfterItems.length}) →
+                </a>
+                <a
+                  href="/guides"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/guides');
+                  }}
+                  className="inline-flex min-h-[44px] items-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+                >
+                  {t.nav.guides} →
+                </a>
               </div>
             </div>
           </div>

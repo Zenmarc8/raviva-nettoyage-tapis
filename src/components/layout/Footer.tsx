@@ -19,17 +19,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Direct Contact */}
           <div>
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/logo-raviva-nettoyage-tapis-montreal.png"
-                alt={SITE_CONFIG.companyName}
-                width={44}
-                height={50}
-                className="h-11 w-auto shrink-0 rounded-lg bg-white p-1 object-contain"
-              />
-              <div className="font-display text-lg font-extrabold text-white">
-                {SITE_CONFIG.companyName}
-              </div>
+            <div className="font-display text-lg font-extrabold text-white">
+              {SITE_CONFIG.companyName}
             </div>
             <p className="mt-3 text-sm leading-relaxed text-slate-300">{t.footer.tagline}</p>
 

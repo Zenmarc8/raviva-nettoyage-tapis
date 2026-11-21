@@ -88,14 +88,18 @@ export const Header: React.FC = () => {
             }}
             className="flex shrink-0 items-center gap-2.5 whitespace-nowrap font-display text-lg font-extrabold tracking-tight text-[#0b3d2e]"
           >
-            <img
-              src="/images/logo-raviva-nettoyage-tapis-montreal.png"
-              alt=""
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
               aria-hidden="true"
-              width={40}
-              height={45}
-              className="h-10 w-auto shrink-0 object-contain"
-            />
+              className="shrink-0 text-[#0b3d2e]"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
+              <path d="M2 10H22" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M7 15H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
             <span>{SITE_CONFIG.shortName}</span>
           </a>
 
@@ -417,19 +421,9 @@ export const Header: React.FC = () => {
             className="flex h-full w-full max-w-sm flex-col overflow-y-auto bg-white p-6 shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-              <div className="flex items-center gap-2.5">
-                <img
-                  src="/images/logo-raviva-nettoyage-tapis-montreal.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={36}
-                  height={41}
-                  className="h-9 w-auto shrink-0 object-contain"
-                />
-                <span className="font-display text-lg font-extrabold text-[#0b3d2e]">
-                  {SITE_CONFIG.shortName}
-                </span>
-              </div>
+              <span className="font-display text-lg font-extrabold text-[#0b3d2e]">
+                {SITE_CONFIG.shortName}
+              </span>
               <button
                 type="button"
                 aria-label={t.a11y.closeMenu}

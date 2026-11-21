@@ -1,16 +1,20 @@
 import React from 'react';
-import { Check, Clock, Mail, MapPin, Phone, Shield } from 'lucide-react';
+import { Award, Check, Clock, Mail, MapPin, Phone, Shield } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site.config';
 import { CUSTOM_CONTENT } from '../config/custom-content.config';
 import { useTranslation } from '../context/LanguageContext';
 import { useRouter } from '../context/RouterContext';
+import { useCms } from '../context/CmsContext';
 import { SeoHead } from '../components/seo/SeoHead';
-import { OptimizedImage } from '../components/common/OptimizedImage';
 import { FaqAccordion } from '../components/common/FaqAccordion';
+import { Raviva6XSection } from '../components/common/Raviva6XSection';
+import { AccreditationsSection } from '../components/common/AccreditationsSection';
+import { SeoImage } from '../components/common/SeoImage';
 
 export const AboutPage: React.FC = () => {
   const { locale, t } = useTranslation();
   const { openQuoteModal } = useRouter();
+  const { exactContent } = useCms();
   const founder = CUSTOM_CONTENT.founderStoryOverrides[locale];
 
   return (
@@ -34,18 +38,23 @@ export const AboutPage: React.FC = () => {
             <p className="mt-4 text-lg leading-relaxed text-slate-600">{t.pages.about.subtitle}</p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
+          <div className="mt-10 grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
+            {/* Authentic IICRC Certificate (Zero generic stock photo) */}
             <div className="lg:col-span-5">
-              <div className="h-full overflow-hidden rounded-2xl border border-slate-200">
-                <OptimizedImage
-                  src={SITE_CONFIG.images.founder}
-                  alt={t.founderSection.portraitAlt}
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[#f4f7f5] p-4">
+                <SeoImage
+                  src={SITE_CONFIG.images.iicrcCert}
+                  alt={exactContent.diplomasGallery[0]?.alt[locale] ?? 'Certificat IICRC Marc Lemonnier'}
+                  caption={exactContent.diplomasGallery[0]?.caption[locale]}
                   aspectRatio="3/4"
                   width={900}
                   height={1200}
-                  className="h-full w-full"
-                  imgClassName="lg:h-full object-cover object-top"
+                  imgClassName="object-contain bg-white"
                 />
+                <div className="mt-3 flex items-center gap-2 px-1 text-xs font-semibold text-[#0b3d2e]">
+                  <Award className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <span>{exactContent.operator.accreditationBody} — Marc Lemonnier</span>
+                </div>
               </div>
             </div>
 
@@ -58,14 +67,21 @@ export const AboutPage: React.FC = () => {
                 {founder.bodyParagraph}
               </p>
 
+              <div className="mt-6 rounded-xl border border-slate-200 bg-[#f4f7f5] p-5">
+                <div className="font-display text-base font-bold text-[#0b3d2e]">
+                  {exactContent.operator.mainGuarantee[locale]}
+                </div>
+                <p className="mt-1 text-sm text-slate-700">{founder.guaranteeText}</p>
+              </div>
+
               <h3 className="mt-8 font-display text-lg font-bold text-slate-900">
-                {t.pages.about.commitmentsTitle}
+                {exactContent.expectationsTitle[locale]}
               </h3>
               <ul className="mt-3 space-y-2.5">
-                {t.pages.about.commitments.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
+                {exactContent.expectations.map((item) => (
+                  <li key={item.id} className="flex items-start gap-2.5 text-sm text-slate-700">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#146c43]" aria-hidden="true" />
-                    <span>{item}</span>
+                    <span>{item[locale]}</span>
                   </li>
                 ))}
               </ul>
@@ -90,24 +106,30 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <h2 className="mt-16 font-display text-2xl font-bold text-slate-900">
-            {t.pages.about.pillarsTitle}
+            {locale === 'fr' ? 'Spécialités & méthodes disponibles' : 'Specialties & Available Methods'}
           </h2>
           <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {t.whyEco.pillars.map((pillar) => (
+            {exactContent.specialtiesSummary.map((spec, idx) => (
               <div
-                key={pillar.number}
+                key={spec.id}
                 className="rounded-xl border border-slate-200 bg-[#f4f7f5]/60 p-6"
               >
-                <div className="text-sm font-bold text-[#146c43] tabular-nums">{pillar.number}</div>
+                <div className="text-sm font-bold text-[#146c43] tabular-nums">0{idx + 1}.</div>
                 <h3 className="mt-1.5 font-display text-lg font-bold text-slate-900">
-                  {pillar.title}
+                  {spec.title[locale]}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{pillar.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {spec.description[locale]}
+                </p>
               </div>
             ))}
           </div>
+
+          <Raviva6XSection compact />
         </div>
       </div>
+
+      <AccreditationsSection />
     </>
   );
 };
@@ -233,7 +255,7 @@ export const ContactPage: React.FC = () => {
                 <span>{t.pages.contact.serviceZoneTitle}</span>
               </div>
               <p className="mt-2 text-sm text-slate-700">
-                Montréal · Laval · Rive-Sud · Couronne Nord
+                Montréal · Laval · Rive-Sud · Couronne Nord (75 municipalités)
               </p>
             </div>
           </div>
